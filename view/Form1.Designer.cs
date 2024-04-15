@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Agrupacion = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnConectar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnSubirDB = new System.Windows.Forms.Button();
+            this.Agrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // Agrupacion
             // 
-            this.groupBox1.Controls.Add(this.btnConectar);
-            this.groupBox1.Controls.Add(this.btnImportar);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(769, 426);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.Agrupacion.Controls.Add(this.btnSubirDB);
+            this.Agrupacion.Controls.Add(this.btnConectar);
+            this.Agrupacion.Controls.Add(this.btnImportar);
+            this.Agrupacion.Controls.Add(this.dataGridView1);
+            this.Agrupacion.Location = new System.Drawing.Point(12, 12);
+            this.Agrupacion.Name = "Agrupacion";
+            this.Agrupacion.Size = new System.Drawing.Size(769, 426);
+            this.Agrupacion.TabIndex = 0;
+            this.Agrupacion.TabStop = false;
+            this.Agrupacion.Text = "agrupacion";
             // 
             // dataGridView1
             // 
@@ -76,15 +79,25 @@
             this.btnConectar.UseVisualStyleBackColor = true;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
+            // btnSubirDB
+            // 
+            this.btnSubirDB.Location = new System.Drawing.Point(310, 19);
+            this.btnSubirDB.Name = "btnSubirDB";
+            this.btnSubirDB.Size = new System.Drawing.Size(146, 23);
+            this.btnSubirDB.TabIndex = 4;
+            this.btnSubirDB.Text = "Subir a la DB ";
+            this.btnSubirDB.UseVisualStyleBackColor = true;
+            this.btnSubirDB.Click += new System.EventHandler(this.btnSubirDB_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Agrupacion);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
+            this.Agrupacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -92,11 +105,12 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox Agrupacion;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Button btnConectar;
+        private System.Windows.Forms.Button btnSubirDB;
     }
 }
 

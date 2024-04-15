@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\CConexion.cs" />
+    <Compile Include="controller\SubirDatosDB.cs" />
     <Compile Include="controller\controllerImportar.cs" />
     <Compile Include="view\Form1.cs">
       <SubType>Form</SubType>

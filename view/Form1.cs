@@ -43,6 +43,13 @@ namespace Importar{
             objetoconexion.establecerConexion();
   
         }
+
+        private void btnSubirDB_Click(object sender, EventArgs e)
+        {
+            controller.SubirDatosDB objetoDeSubirDatosDB = new controller.SubirDatosDB();
+            objetoDeSubirDatosDB.SubirDatos(dataGridView1);
+
+        }
     }
     
 }
