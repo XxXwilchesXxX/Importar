@@ -16,9 +16,9 @@ using Importar.controller;
 
 
 namespace Importar{
-    public partial class Form1 : Form
+    public partial class software : Form
     {
-        public Form1()
+        public software()
         {
             InitializeComponent();
       
@@ -32,7 +32,7 @@ namespace Importar{
             if (dt != null)
             {
                 // Asignar el DataTable al DataGridView
-                dataGridView1.DataSource = dt;
+                cuadriculaDedatos.DataSource = dt;
             }
 
         }
@@ -47,7 +47,7 @@ namespace Importar{
         private void btnSubirDB_Click(object sender, EventArgs e)
         {
             controller.SubirDatosDB objetoDeSubirDatosDB = new controller.SubirDatosDB();
-            objetoDeSubirDatosDB.SubirDatos(dataGridView1);
+            objetoDeSubirDatosDB.SubirDatos(cuadriculaDedatos);
 
         }
     }

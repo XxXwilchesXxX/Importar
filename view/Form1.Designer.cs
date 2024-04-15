@@ -1,6 +1,6 @@
 ﻿namespace Importar
 {
-    partial class Form1
+    partial class software
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.Agrupacion = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cuadriculaDedatos = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnConectar = new System.Windows.Forms.Button();
             this.btnSubirDB = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Agrupacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuadriculaDedatos)).BeginInit();
             this.SuspendLayout();
             // 
             // Agrupacion
             // 
+            this.Agrupacion.Controls.Add(this.textBox1);
             this.Agrupacion.Controls.Add(this.btnSubirDB);
             this.Agrupacion.Controls.Add(this.btnConectar);
             this.Agrupacion.Controls.Add(this.btnImportar);
-            this.Agrupacion.Controls.Add(this.dataGridView1);
+            this.Agrupacion.Controls.Add(this.cuadriculaDedatos);
             this.Agrupacion.Location = new System.Drawing.Point(12, 12);
             this.Agrupacion.Name = "Agrupacion";
             this.Agrupacion.Size = new System.Drawing.Size(769, 426);
@@ -51,13 +53,13 @@
             this.Agrupacion.TabStop = false;
             this.Agrupacion.Text = "agrupacion";
             // 
-            // dataGridView1
+            // cuadriculaDedatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(755, 372);
-            this.dataGridView1.TabIndex = 1;
+            this.cuadriculaDedatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cuadriculaDedatos.Location = new System.Drawing.Point(6, 48);
+            this.cuadriculaDedatos.Name = "cuadriculaDedatos";
+            this.cuadriculaDedatos.Size = new System.Drawing.Size(755, 372);
+            this.cuadriculaDedatos.TabIndex = 1;
             // 
             // btnImportar
             // 
@@ -89,16 +91,24 @@
             this.btnSubirDB.UseVisualStyleBackColor = true;
             this.btnSubirDB.Click += new System.EventHandler(this.btnSubirDB_Click);
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(553, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(176, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // software
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
             this.Controls.Add(this.Agrupacion);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "software";
+            this.Text = "Programa de insertar archivo CSV";
             this.Agrupacion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Agrupacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cuadriculaDedatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,10 +117,11 @@
 
         private System.Windows.Forms.GroupBox Agrupacion;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView cuadriculaDedatos;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Button btnSubirDB;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
