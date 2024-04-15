@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Importar.Clases
+namespace Importar.controller
 {
     internal class CConexion
     {

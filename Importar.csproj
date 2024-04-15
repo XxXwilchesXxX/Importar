@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\CConexion.cs" />
+    <Compile Include="controller\CConexion.cs" />
     <Compile Include="controller\controllerImportar.cs" />
     <Compile Include="view\Form1.cs">
       <SubType>Form</SubType>

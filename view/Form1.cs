@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using MySql.Data.MySqlClient;
-using Importar.Clases;
 using Importar.controller;
 
 
@@ -36,6 +35,13 @@ namespace Importar{
                 dataGridView1.DataSource = dt;
             }
 
+        }
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            controller.CConexion objetoconexion = new controller.CConexion();
+            objetoconexion.establecerConexion();
+  
         }
     }
     
