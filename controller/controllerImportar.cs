@@ -7,7 +7,7 @@ namespace Importar.controller
 {
     internal class controllerImportar
     {
-        public DataTable Importarcsv()
+        public bool Importarcsv(DataGridView cuadriculaDeDatos)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Archivos CSV (*.csv)|*.csv|Todos los archivos (*.*)|*.*";
@@ -17,28 +17,27 @@ namespace Importar.controller
             {
                 try
                 {
-                    // Crear DataTable para almacenar los datos CSV
-                    DataTable dt = new DataTable();
+                    // Leer el contenido del archivo CSV
+                    string[] lineas = File.ReadAllLines(openFileDialog.FileName);
 
-                    // Leer el contenido del archivo CSV usando StreamReader
-                    using (StreamReader reader = new StreamReader(openFileDialog.FileName))
+                    // Verificar si los datos ya han sido importados previamente en la cuadrícula
+                    foreach (string linea in lineas)
                     {
-                        // Leer la primera línea para crear las columnas
-                        string[] headers = reader.ReadLine().Split(';');
-                        foreach (string header in headers)
+                        if (DatosYaImportados(linea, cuadriculaDeDatos))
                         {
-                            dt.Columns.Add(header);
+                            MessageBox.Show("Estos datos ya han sido importados previamente.");
+                            return false;
                         }
 
-                        // Leer el resto de las líneas para llenar los datos
-                        while (!reader.EndOfStream)
+                    // Si no hay datos duplicados, agregar los nuevos datos a la cuadrícula
+                    foreach (string linea in lineas)
                         {
-                            string[] rows = reader.ReadLine().Split(';');
-                            dt.Rows.Add(rows);
-                        }
+                        string[] campos = linea.Split(';');
+                        cuadriculaDeDatos.Rows.Add(campos);
                     }
 
-                    return dt; // Devolver el DataTable con los datos CSV
+                    MessageBox.Show("Datos importados correctamente.");
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -46,7 +45,24 @@ namespace Importar.controller
                 }
             }
 
-            return null; // Devolver null si la operación se cancela o hay un error
+            return false; // Devolver false si la operación se cancela o hay un error
+        }
+
+        private bool DatosYaImportados(string nuevaLinea, DataGridView cuadriculaDeDatos)
+        {
+            foreach (DataGridViewRow fila in cuadriculaDeDatos.Rows)
+            {
+                string lineaExistente = "";
+                foreach (DataGridViewCell celda in fila.Cells)
+                {
+                    lineaExistente += celda.Value.ToString() + ";";
+                }
+                if (lineaExistente == nuevaLinea)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
