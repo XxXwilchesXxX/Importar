@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.Agrupacion = new System.Windows.Forms.GroupBox();
+            this.btnSubirDB = new System.Windows.Forms.Button();
+            this.btnConectar = new System.Windows.Forms.Button();
+            this.btnImportar = new System.Windows.Forms.Button();
             this.cuadriculaDedatos = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnImportar = new System.Windows.Forms.Button();
-            this.btnConectar = new System.Windows.Forms.Button();
-            this.btnSubirDB = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Agrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuadriculaDedatos)).BeginInit();
             this.SuspendLayout();
             // 
             // Agrupacion
             // 
-            this.Agrupacion.Controls.Add(this.textBox1);
+            this.Agrupacion.BackColor = System.Drawing.SystemColors.Info;
             this.Agrupacion.Controls.Add(this.btnSubirDB);
             this.Agrupacion.Controls.Add(this.btnConectar);
             this.Agrupacion.Controls.Add(this.btnImportar);
@@ -51,63 +50,62 @@
             this.Agrupacion.Size = new System.Drawing.Size(769, 426);
             this.Agrupacion.TabIndex = 0;
             this.Agrupacion.TabStop = false;
-            this.Agrupacion.Text = "agrupacion";
+            // 
+            // btnSubirDB
+            // 
+            this.btnSubirDB.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSubirDB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSubirDB.Location = new System.Drawing.Point(310, 19);
+            this.btnSubirDB.Name = "btnSubirDB";
+            this.btnSubirDB.Size = new System.Drawing.Size(146, 23);
+            this.btnSubirDB.TabIndex = 4;
+            this.btnSubirDB.Text = "Subir a la DB ";
+            this.btnSubirDB.UseVisualStyleBackColor = false;
+            this.btnSubirDB.Click += new System.EventHandler(this.btnSubirDB_Click);
+            // 
+            // btnConectar
+            // 
+            this.btnConectar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnConectar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnConectar.Location = new System.Drawing.Point(158, 19);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(146, 23);
+            this.btnConectar.TabIndex = 3;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.UseVisualStyleBackColor = false;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnImportar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnImportar.Location = new System.Drawing.Point(6, 19);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(146, 23);
+            this.btnImportar.TabIndex = 2;
+            this.btnImportar.Text = "Importar";
+            this.btnImportar.UseVisualStyleBackColor = false;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // cuadriculaDedatos
             // 
+            this.cuadriculaDedatos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.cuadriculaDedatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cuadriculaDedatos.Location = new System.Drawing.Point(6, 48);
             this.cuadriculaDedatos.Name = "cuadriculaDedatos";
             this.cuadriculaDedatos.Size = new System.Drawing.Size(755, 372);
             this.cuadriculaDedatos.TabIndex = 1;
             // 
-            // btnImportar
-            // 
-            this.btnImportar.Location = new System.Drawing.Point(6, 19);
-            this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(146, 23);
-            this.btnImportar.TabIndex = 2;
-            this.btnImportar.Text = "Importar";
-            this.btnImportar.UseVisualStyleBackColor = true;
-            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
-            // 
-            // btnConectar
-            // 
-            this.btnConectar.Location = new System.Drawing.Point(158, 19);
-            this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(146, 23);
-            this.btnConectar.TabIndex = 3;
-            this.btnConectar.Text = "Conectar";
-            this.btnConectar.UseVisualStyleBackColor = true;
-            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
-            // 
-            // btnSubirDB
-            // 
-            this.btnSubirDB.Location = new System.Drawing.Point(310, 19);
-            this.btnSubirDB.Name = "btnSubirDB";
-            this.btnSubirDB.Size = new System.Drawing.Size(146, 23);
-            this.btnSubirDB.TabIndex = 4;
-            this.btnSubirDB.Text = "Subir a la DB ";
-            this.btnSubirDB.UseVisualStyleBackColor = true;
-            this.btnSubirDB.Click += new System.EventHandler(this.btnSubirDB_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(553, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 5;
-            // 
             // software
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(788, 450);
             this.Controls.Add(this.Agrupacion);
             this.Name = "software";
             this.Text = "Programa de insertar archivo CSV";
             this.Agrupacion.ResumeLayout(false);
-            this.Agrupacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuadriculaDedatos)).EndInit();
             this.ResumeLayout(false);
 
@@ -121,7 +119,6 @@
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Button btnSubirDB;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

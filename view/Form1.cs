@@ -18,11 +18,17 @@ using Importar.controller;
 namespace Importar{
     public partial class software : Form
     {
+
+
+
         public software()
         {
             InitializeComponent();
       
         }
+
+
+
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
@@ -37,12 +43,23 @@ namespace Importar{
 
         }
 
+
+
+
+
+
         private void btnConectar_Click(object sender, EventArgs e)
         {
             controller.CConexion objetoconexion = new controller.CConexion();
             objetoconexion.establecerConexion();
   
         }
+
+
+
+
+
+
 
         private void btnSubirDB_Click(object sender, EventArgs e)
         {

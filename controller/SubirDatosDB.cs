@@ -24,10 +24,17 @@ namespace Importar.controller
                     // Verificar si la conexión se estableció correctamente
                     if (connection.State == ConnectionState.Open)
                     {
-                        // Guardar los datos en la base de datos MySQL
-                        GuardarDatosEnBaseDeDatos(dt, connection);
-
-                        MessageBox.Show("Datos subidos a la base de datos correctamente.");
+                        // Verificar si los datos ya han sido subidos previamente
+                        if (!DatosYaSubidos(dt, connection))
+                        {
+                            // Guardar los datos en la base de datos MySQL
+                            GuardarDatosEnBaseDeDatos(dt, connection);
+                            MessageBox.Show("Datos subidos a la base de datos correctamente.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Los datos ya han sido subidos previamente.");
+                        }
                     }
                     else
                     {
@@ -43,6 +50,40 @@ namespace Importar.controller
             {
                 MessageBox.Show("Error al subir los datos a la base de datos: " + ex.Message);
             }
+        }
+
+        private bool DatosYaSubidos(DataTable dt, MySqlConnection connection)
+        {
+            // Consulta para verificar si existen registros con los mismos valores en la base de datos
+            string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
+
+            // Iterar a través de cada fila en el DataTable
+            foreach (DataRow row in dt.Rows)
+            {
+                // Crear el comando SQL
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                // Agregar parámetros a la consulta
+                command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
+                command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
+                command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
+                command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
+                command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
+                command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
+                command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
+
+                // Ejecutar la consulta y obtener el resultado
+                int count = Convert.ToInt32(command.ExecuteScalar());
+
+                // Si se encuentra al menos un registro, los datos ya han sido subidos previamente
+                if (count > 0)
+                {
+                    return true;
+                }
+            }
+
+            // Si no se encuentra ningún registro, los datos no han sido subidos previamente
+            return false;
         }
 
         private void GuardarDatosEnBaseDeDatos(DataTable dt, MySqlConnection connection)
