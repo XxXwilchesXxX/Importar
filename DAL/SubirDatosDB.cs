@@ -1,9 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Importar.controller;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Importar.controller
+namespace Importar.DAL
 {
     internal class SubirDatosDB
     {

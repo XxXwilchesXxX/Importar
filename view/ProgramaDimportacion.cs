@@ -11,11 +11,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using MySql.Data.MySqlClient;
-using Importar.controller;
+using Importar.DAL;
 
 
 
-namespace Importar{
+namespace Importar
+{
     public partial class software : Form
     {
 
@@ -32,39 +33,23 @@ namespace Importar{
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            controller.controllerImportar objetoDeImportacion = new controller.controllerImportar();
+            controllerImportar objetoDeImportacion = new DAL.controllerImportar();
             DataTable dt = objetoDeImportacion.Importarcsv();
 
             if (dt != null)
             {
                 // Asignar el DataTable al DataGridView
-                cuadriculaDedatos.DataSource = dt;
+                Dgv_cuadriculaDedatos.DataSource = dt;
             }
 
         }
 
 
 
-
-
-
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-            controller.CConexion objetoconexion = new controller.CConexion();
-            objetoconexion.establecerConexion();
-  
-        }
-
-
-
-
-
-
-
         private void btnSubirDB_Click(object sender, EventArgs e)
         {
-            controller.SubirDatosDB objetoDeSubirDatosDB = new controller.SubirDatosDB();
-            objetoDeSubirDatosDB.SubirDatos(cuadriculaDedatos);
+            SubirDatosDB objetoDeSubirDatosDB = new DAL.SubirDatosDB();
+            objetoDeSubirDatosDB.SubirDatos(Dgv_cuadriculaDedatos);
 
         }
     }
