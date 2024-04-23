@@ -9,9 +9,11 @@ namespace Importar.DAL
     {
         public DataTable Importarcsv()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos CSV (*.csv)|*.csv|Todos los archivos (*.*)|*.*";
-            openFileDialog.Title = "Seleccionar archivo CSV";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Archivos CSV (*.csv)|*.csv|Todos los archivos (*.*)|*.*",
+                Title = "Seleccionar archivo CSV"
+            };
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -19,16 +21,11 @@ namespace Importar.DAL
                 {
                     // Crear DataTable para almacenar los datos CSV
                     DataTable dt = new DataTable();
-
-                    // Leer el contenido del archivo CSV usando StreamReader
                     using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                     {
                         // Leer la primera línea para crear las columnas
                         string[] headers = reader.ReadLine().Split(';');
-                        foreach (string header in headers)
-                        {
-                            dt.Columns.Add(header);
-                        }
+                        foreach (string header in headers) dt.Columns.Add(header);
 
                         // Leer el resto de las líneas para llenar los datos
                         while (!reader.EndOfStream)
@@ -38,7 +35,7 @@ namespace Importar.DAL
                         }
                     }
 
-                    return dt; // Devolver el DataTable con los datos CSV
+                    return dt;
                 }
                 catch (Exception ex)
                 {
@@ -46,7 +43,7 @@ namespace Importar.DAL
                 }
             }
 
-            return null; // Devolver null si la operación se cancela o hay un error
+            return null;
         }
     }
 }
