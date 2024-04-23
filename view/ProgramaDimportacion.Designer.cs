@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Agrupacion = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtContador = new System.Windows.Forms.TextBox();
             this.btnSubirDB = new System.Windows.Forms.Button();
             this.btnImportar = new System.Windows.Forms.Button();
             this.Dgv_cuadriculaDedatos = new System.Windows.Forms.DataGridView();
@@ -41,7 +41,7 @@
             // Agrupacion
             // 
             this.Agrupacion.BackColor = System.Drawing.SystemColors.Info;
-            this.Agrupacion.Controls.Add(this.textBox1);
+            this.Agrupacion.Controls.Add(this.txtContador);
             this.Agrupacion.Controls.Add(this.btnSubirDB);
             this.Agrupacion.Controls.Add(this.btnImportar);
             this.Agrupacion.Controls.Add(this.Dgv_cuadriculaDedatos);
@@ -51,12 +51,12 @@
             this.Agrupacion.TabIndex = 0;
             this.Agrupacion.TabStop = false;
             // 
-            // textBox1
+            // txtContador
             // 
-            this.textBox1.Location = new System.Drawing.Point(500, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtContador.Location = new System.Drawing.Point(500, 21);
+            this.txtContador.Name = "txtContador";
+            this.txtContador.Size = new System.Drawing.Size(100, 20);
+            this.txtContador.TabIndex = 5;
             // 
             // btnSubirDB
             // 
@@ -114,7 +114,7 @@
         private System.Windows.Forms.DataGridView Dgv_cuadriculaDedatos;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Button btnSubirDB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContador;
     }
 }
 

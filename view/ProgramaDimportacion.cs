@@ -25,6 +25,7 @@ namespace Importar
         public software()
         {
             InitializeComponent();
+
       
         }
 
@@ -33,8 +34,12 @@ namespace Importar
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
+
+
             controllerImportar objetoDeImportacion = new DAL.controllerImportar();
             DataTable dt = objetoDeImportacion.Importarcsv();
+
+
 
             if (dt != null)
             {

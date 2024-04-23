@@ -19,15 +19,12 @@ namespace Importar.DAL
             {
                 try
                 {
-                    // Crear DataTable para almacenar los datos CSV
                     DataTable dt = new DataTable();
                     using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                     {
-                        // Leer la primera línea para crear las columnas
                         string[] headers = reader.ReadLine().Split(';');
                         foreach (string header in headers) dt.Columns.Add(header);
 
-                        // Leer el resto de las líneas para llenar los datos
                         while (!reader.EndOfStream)
                         {
                             string[] rows = reader.ReadLine().Split(';');
