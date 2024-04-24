@@ -8,7 +8,10 @@ namespace Importar.DAL
 {
     internal class SubirDatosDB
     {
-        public void SubirDatos(DataGridView dataGridView)
+        // Variable estática para guardar el índice de inicio
+        private static int indiceInicio = 0;
+
+        public void SubirDatos(DataGridView dataGridView, int numDatos)
         {
             try
             {
@@ -21,14 +24,16 @@ namespace Importar.DAL
 
                     if (connection.State == ConnectionState.Open)
                     {
-                        if (!DatosYaSubidos(dt, connection))
+                        // Verificar si los datos ya fueron subidos previamente
+                        if (!DatosYaSubidos(dt, connection, indiceInicio, datosASubir))
                         {
-                            GuardarDatosEnBaseDeDatos(dt, connection);
-                            MessageBox.Show("Datos subidos a la base de datos correctamente.");
+                            GuardarDatosEnBaseDeDatos(dt, connection, indiceInicio, datosASubir);
+                            MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
+                            indiceInicio += datosASubir; // Actualizar el índice de inicio
                         }
                         else
                         {
-                            MessageBox.Show("Los datos ya han sido subidos previamente.");
+                            MessageBox.Show("Algunos datos ya han sido subidos previamente.");
                         }
                     }
                     else
@@ -47,11 +52,11 @@ namespace Importar.DAL
             }
         }
 
-        private bool DatosYaSubidos(DataTable dt, MySqlConnection connection)
+        private bool DatosYaSubidos(DataTable dt, MySqlConnection connection, int indiceInicio, int datosASubir)
         {
             string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
 
-            foreach (DataRow row in dt.Rows)
+            for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
@@ -73,9 +78,9 @@ namespace Importar.DAL
             return false;
         }
 
-        private void GuardarDatosEnBaseDeDatos(DataTable dt, MySqlConnection connection)
+        private void GuardarDatosEnBaseDeDatos(DataTable dt, MySqlConnection connection, int indiceInicio, int datosASubir)
         {
-            foreach (DataRow row in dt.Rows)
+            for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
             {
                 string query = "INSERT INTO MiTabla (codigo_loc, consec_ctr, codigo_trs, id_emp, valor_ctr, fecha_ctr, estado_ctr) VALUES (@codigo_loc, @consec_ctr, @codigo_trs, @id_emp, @valor_ctr, @fecha_ctr, @estado_ctr)";
 
