@@ -8,7 +8,6 @@ namespace Importar.DAL
 {
     internal class SubirDatosDB
     {
-        // Variable estática para guardar el índice de inicio
         private static int indiceInicio = 0;
 
         public void SubirDatos(DataGridView dataGridView, int numDatos)
@@ -19,17 +18,24 @@ namespace Importar.DAL
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
+                    if (indiceInicio >= dt.Rows.Count)
+                    {
+                        MessageBox.Show("No hay más datos para subir.");
+                        return;
+                    }
+
+                    int datosASubir = Math.Min(numDatos, dt.Rows.Count - indiceInicio);
+
                     CConexion conexion = new CConexion();
                     MySqlConnection connection = conexion.establecerConexion();
 
                     if (connection.State == ConnectionState.Open)
                     {
-                        // Verificar si los datos ya fueron subidos previamente
                         if (!DatosYaSubidos(dt, connection, indiceInicio, datosASubir))
                         {
                             GuardarDatosEnBaseDeDatos(dt, connection, indiceInicio, datosASubir);
                             MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
-                            indiceInicio += datosASubir; // Actualizar el índice de inicio
+                            indiceInicio += datosASubir;
                         }
                         else
                         {
@@ -58,6 +64,8 @@ namespace Importar.DAL
 
             for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
             {
+                DataRow row = dt.Rows[i];
+
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
                 command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
@@ -82,6 +90,8 @@ namespace Importar.DAL
         {
             for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
             {
+                DataRow row = dt.Rows[i];
+
                 string query = "INSERT INTO MiTabla (codigo_loc, consec_ctr, codigo_trs, id_emp, valor_ctr, fecha_ctr, estado_ctr) VALUES (@codigo_loc, @consec_ctr, @codigo_trs, @id_emp, @valor_ctr, @fecha_ctr, @estado_ctr)";
 
                 MySqlCommand command = new MySqlCommand(query, connection);

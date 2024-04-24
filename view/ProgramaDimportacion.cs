@@ -53,12 +53,27 @@ namespace Importar
 
         private void btnSubirDB_Click(object sender, EventArgs e)
         {
-            SubirDatosDB objetoDeSubirDatosDB = new DAL.SubirDatosDB();
-            objetoDeSubirDatosDB.SubirDatos(Dgv_cuadriculaDedatos);
+            // Asumiendo que el TextBox donde se ingresa el número de datos se llama txtNumeroDatos
+            int numDatos;
 
+            // Intentar convertir el valor del TextBox a un número entero
+            if (int.TryParse(txtNumeroDatos.Text, out numDatos) && numDatos > 0)
+            {
+                // Crear instancia de SubirDatosDB
+                SubirDatosDB objetoDeSubirDatosDB = new DAL.SubirDatosDB();
+
+                // Llamar al método SubirDatos con el DataGridView y el número de datos a subir
+                objetoDeSubirDatosDB.SubirDatos(Dgv_cuadriculaDedatos, numDatos);
+            }
+            else
+            {
+                // Si la conversión falla o el número es inválido, mostrar un mensaje de error
+                MessageBox.Show("Ingrese un número válido para la cantidad de datos a subir.");
+            }
         }
+
     }
-    
+
 }
 
 
