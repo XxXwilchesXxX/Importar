@@ -29,7 +29,26 @@ namespace Importar.DAL
             return 0;
         }
 
-        public void SubirDatos(DataGridView dataGridView, int numDatos)
+        private bool DatoYaExiste(MySqlConnection connection, DataRow row)
+        {
+            // Verificar si el dato ya existe en la base de datos
+            string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
+            command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
+            command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
+            command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
+            command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
+            command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
+            command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
+
+            int count = Convert.ToInt32(command.ExecuteScalar());
+
+            return count > 0; // Si el conteo es mayor que cero, el dato ya existe
+        }
+
+        public void SubirDatos(DataGridView dataGridView, int numDatos, Action<int> reportarProgreso)
         {
             try
             {
@@ -54,7 +73,15 @@ namespace Importar.DAL
 
                 if (connection.State == ConnectionState.Open)
                 {
-                    GuardarDatosEnBaseDeDatos(dt, connection, indiceInicio, datosASubir);
+                    for (int i = 0; i < datosASubir; i++)
+                    {
+                        if (!DatoYaExiste(connection, dt.Rows[indiceInicio + i]))
+                        {
+                            GuardarDatosEnBaseDeDatos(dt, connection, indiceInicio + i, 1);
+                            reportarProgreso(((i + 1) * 100) / datosASubir); // Reportar progreso como porcentaje
+                        }
+                    }
+
                     indiceInicio += datosASubir;
                     GuardarIndice();
 
@@ -69,24 +96,6 @@ namespace Importar.DAL
             {
                 MessageBox.Show("Error al subir los datos a la base de datos: " + ex.Message);
             }
-        }
-
-        private bool DatoYaExiste(MySqlConnection connection, DataRow row)
-        {
-            string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
-
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
-            command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
-            command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
-            command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
-            command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
-            command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
-            command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
-
-            int count = Convert.ToInt32(command.ExecuteScalar());
-
-            return count > 0; 
         }
 
         private void GuardarDatosEnBaseDeDatos(DataTable dt, MySqlConnection connection, int indiceInicio, int datosASubir)

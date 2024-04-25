@@ -36,6 +36,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.prgbProcessing = new System.Windows.Forms.ProgressBar();
+            this.lblProcessing = new System.Windows.Forms.Label();
             this.grpAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +45,8 @@
             // grpAgrupacion
             // 
             this.grpAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.grpAgrupacion.Controls.Add(this.lblProcessing);
+            this.grpAgrupacion.Controls.Add(this.prgbProcessing);
             this.grpAgrupacion.Controls.Add(this.txtNumeroDatos);
             this.grpAgrupacion.Controls.Add(this.btnSubirDB);
             this.grpAgrupacion.Controls.Add(this.btnImportar);
@@ -93,6 +97,22 @@
             this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(755, 372);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
+            // prgbProcessing
+            // 
+            this.prgbProcessing.Location = new System.Drawing.Point(171, 18);
+            this.prgbProcessing.Name = "prgbProcessing";
+            this.prgbProcessing.Size = new System.Drawing.Size(173, 23);
+            this.prgbProcessing.TabIndex = 6;
+            // 
+            // lblProcessing
+            // 
+            this.lblProcessing.AutoSize = true;
+            this.lblProcessing.Location = new System.Drawing.Point(362, 23);
+            this.lblProcessing.Name = "lblProcessing";
+            this.lblProcessing.Size = new System.Drawing.Size(91, 13);
+            this.lblProcessing.TabIndex = 7;
+            this.lblProcessing.Text = "Processing......0%";
+            // 
             // software
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +139,8 @@
         private System.Windows.Forms.TextBox txtNumeroDatos;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.Windows.Forms.ProgressBar prgbProcessing;
+        private System.Windows.Forms.Label lblProcessing;
     }
 }
 

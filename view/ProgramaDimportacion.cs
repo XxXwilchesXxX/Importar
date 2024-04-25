@@ -52,23 +52,47 @@ namespace Importar
 
         private void btnSubirDB_Click(object sender, EventArgs e)
         {
-            
             int numDatos;
 
-            
             if (int.TryParse(txtNumeroDatos.Text, out numDatos) && numDatos > 0)
             {
-                
-                SubirDatosDB objetoDeSubirDatosDB = new DAL.SubirDatosDB();
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.WorkerReportsProgress = true;
 
-              
-                objetoDeSubirDatosDB.SubirDatos(Dgv_cuadriculaDedatos, numDatos);
+                worker.DoWork += (s, ev) =>
+                {
+                    SubirDatosDB subirDatosDB = new Importar.DAL.SubirDatosDB();
+
+                    subirDatosDB.SubirDatos(Dgv_cuadriculaDedatos, numDatos, percent =>
+                    {
+                        worker.ReportProgress(percent);
+                    });
+                };
+
+                worker.ProgressChanged += (s, ev) =>
+                {
+                    prgbProcessing.Value = ev.ProgressPercentage;
+                    lblProcessing.Text = $"Subiendo datos... {ev.ProgressPercentage}%";
+                };
+
+                worker.RunWorkerCompleted += (s, ev) =>
+                {
+                    prgbProcessing.Value = 0;
+                    lblProcessing.Text = "Completado";
+                    MessageBox.Show("Datos subidos con éxito");
+                };
+
+                prgbProcessing.Visible = true;
+                lblProcessing.Visible = true;
+
+                worker.RunWorkerAsync(); // Inicia el trabajo en segundo plano
             }
             else
             {
                 MessageBox.Show("Ingrese un número válido para la cantidad de datos a subir.");
             }
         }
+
 
     }
 
