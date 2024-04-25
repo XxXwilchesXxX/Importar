@@ -29,29 +29,16 @@ namespace Importar.DAL
                     CConexion conexion = new CConexion();
                     MySqlConnection connection = conexion.establecerConexion();
 
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        if (!DatosYaSubidos(dt, connection, indiceInicio, datosASubir))
+                if (connection.State == ConnectionState.Open)
                         {
                             GuardarDatosEnBaseDeDatos(dt, connection, indiceInicio, datosASubir);
                             MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
-                            indiceInicio += datosASubir;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Algunos datos ya han sido subidos previamente.");
-                        }
                     }
                     else
                     {
                         MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No hay datos para subir a la base de datos.");
-                }
-            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al subir los datos a la base de datos: " + ex.Message);
@@ -61,10 +48,6 @@ namespace Importar.DAL
         private bool DatosYaSubidos(DataTable dt, MySqlConnection connection, int indiceInicio, int datosASubir)
         {
             string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
-
-            for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
-            {
-                DataRow row = dt.Rows[i];
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
