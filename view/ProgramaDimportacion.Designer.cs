@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Agrupacion = new System.Windows.Forms.GroupBox();
+            this.grpAgrupacion = new System.Windows.Forms.GroupBox();
             this.txtNumeroDatos = new System.Windows.Forms.TextBox();
             this.btnSubirDB = new System.Windows.Forms.Button();
             this.btnImportar = new System.Windows.Forms.Button();
             this.Dgv_cuadriculaDedatos = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Agrupacion.SuspendLayout();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.grpAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // Agrupacion
+            // grpAgrupacion
             // 
-            this.Agrupacion.BackColor = System.Drawing.SystemColors.Info;
-            this.Agrupacion.Controls.Add(this.txtNumeroDatos);
-            this.Agrupacion.Controls.Add(this.btnSubirDB);
-            this.Agrupacion.Controls.Add(this.btnImportar);
-            this.Agrupacion.Controls.Add(this.Dgv_cuadriculaDedatos);
-            this.Agrupacion.Location = new System.Drawing.Point(12, 12);
-            this.Agrupacion.Name = "Agrupacion";
-            this.Agrupacion.Size = new System.Drawing.Size(769, 426);
-            this.Agrupacion.TabIndex = 0;
-            this.Agrupacion.TabStop = false;
+            this.grpAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.grpAgrupacion.Controls.Add(this.txtNumeroDatos);
+            this.grpAgrupacion.Controls.Add(this.btnSubirDB);
+            this.grpAgrupacion.Controls.Add(this.btnImportar);
+            this.grpAgrupacion.Controls.Add(this.Dgv_cuadriculaDedatos);
+            this.grpAgrupacion.Location = new System.Drawing.Point(12, 12);
+            this.grpAgrupacion.Name = "grpAgrupacion";
+            this.grpAgrupacion.Size = new System.Drawing.Size(769, 426);
+            this.grpAgrupacion.TabIndex = 0;
+            this.grpAgrupacion.TabStop = false;
             // 
             // txtNumeroDatos
             // 
@@ -97,11 +99,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(788, 450);
-            this.Controls.Add(this.Agrupacion);
+            this.Controls.Add(this.grpAgrupacion);
             this.Name = "software";
             this.Text = "Programa de insertar archivo CSV";
-            this.Agrupacion.ResumeLayout(false);
-            this.Agrupacion.PerformLayout();
+            this.grpAgrupacion.ResumeLayout(false);
+            this.grpAgrupacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).EndInit();
             this.ResumeLayout(false);
 
@@ -109,12 +111,14 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox Agrupacion;
+        private System.Windows.Forms.GroupBox grpAgrupacion;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView Dgv_cuadriculaDedatos;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Button btnSubirDB;
         private System.Windows.Forms.TextBox txtNumeroDatos;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
     }
 }
 

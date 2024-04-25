@@ -86,7 +86,7 @@ namespace Importar.DAL
 
             int count = Convert.ToInt32(command.ExecuteScalar());
 
-            return count > 0; // True si el dato ya existe
+            return count > 0; 
         }
 
         private void GuardarDatosEnBaseDeDatos(DataTable dt, MySqlConnection connection, int indiceInicio, int datosASubir)
