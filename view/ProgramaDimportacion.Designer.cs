@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpAgrupacion = new System.Windows.Forms.GroupBox();
+            this.lblProcessing = new System.Windows.Forms.Label();
+            this.prgbProcessing = new System.Windows.Forms.ProgressBar();
             this.txtNumeroDatos = new System.Windows.Forms.TextBox();
             this.btnSubirDB = new System.Windows.Forms.Button();
             this.btnImportar = new System.Windows.Forms.Button();
@@ -36,15 +39,17 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-            this.prgbProcessing = new System.Windows.Forms.ProgressBar();
-            this.lblProcessing = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblFilasImportadas = new System.Windows.Forms.Label();
             this.grpAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpAgrupacion
             // 
             this.grpAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.grpAgrupacion.Controls.Add(this.lblFilasImportadas);
             this.grpAgrupacion.Controls.Add(this.lblProcessing);
             this.grpAgrupacion.Controls.Add(this.prgbProcessing);
             this.grpAgrupacion.Controls.Add(this.txtNumeroDatos);
@@ -53,9 +58,25 @@
             this.grpAgrupacion.Controls.Add(this.Dgv_cuadriculaDedatos);
             this.grpAgrupacion.Location = new System.Drawing.Point(12, 12);
             this.grpAgrupacion.Name = "grpAgrupacion";
-            this.grpAgrupacion.Size = new System.Drawing.Size(769, 426);
+            this.grpAgrupacion.Size = new System.Drawing.Size(769, 466);
             this.grpAgrupacion.TabIndex = 0;
             this.grpAgrupacion.TabStop = false;
+            // 
+            // lblProcessing
+            // 
+            this.lblProcessing.AutoSize = true;
+            this.lblProcessing.Location = new System.Drawing.Point(362, 23);
+            this.lblProcessing.Name = "lblProcessing";
+            this.lblProcessing.Size = new System.Drawing.Size(91, 13);
+            this.lblProcessing.TabIndex = 7;
+            this.lblProcessing.Text = "Processing......0%";
+            // 
+            // prgbProcessing
+            // 
+            this.prgbProcessing.Location = new System.Drawing.Point(171, 18);
+            this.prgbProcessing.Name = "prgbProcessing";
+            this.prgbProcessing.Size = new System.Drawing.Size(173, 23);
+            this.prgbProcessing.TabIndex = 6;
             // 
             // txtNumeroDatos
             // 
@@ -97,34 +118,32 @@
             this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(755, 372);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
-            // prgbProcessing
+            // errorProvider1
             // 
-            this.prgbProcessing.Location = new System.Drawing.Point(171, 18);
-            this.prgbProcessing.Name = "prgbProcessing";
-            this.prgbProcessing.Size = new System.Drawing.Size(173, 23);
-            this.prgbProcessing.TabIndex = 6;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // lblProcessing
+            // lblFilasImportadas
             // 
-            this.lblProcessing.AutoSize = true;
-            this.lblProcessing.Location = new System.Drawing.Point(362, 23);
-            this.lblProcessing.Name = "lblProcessing";
-            this.lblProcessing.Size = new System.Drawing.Size(91, 13);
-            this.lblProcessing.TabIndex = 7;
-            this.lblProcessing.Text = "Processing......0%";
+            this.lblFilasImportadas.AutoSize = true;
+            this.lblFilasImportadas.Location = new System.Drawing.Point(18, 440);
+            this.lblFilasImportadas.Name = "lblFilasImportadas";
+            this.lblFilasImportadas.Size = new System.Drawing.Size(116, 13);
+            this.lblFilasImportadas.TabIndex = 1;
+            this.lblFilasImportadas.Text = "Esperando Importacion";
             // 
             // software
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(788, 450);
+            this.ClientSize = new System.Drawing.Size(788, 490);
             this.Controls.Add(this.grpAgrupacion);
             this.Name = "software";
             this.Text = "Programa de insertar archivo CSV";
             this.grpAgrupacion.ResumeLayout(false);
             this.grpAgrupacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,6 +160,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private System.Windows.Forms.ProgressBar prgbProcessing;
         private System.Windows.Forms.Label lblProcessing;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblFilasImportadas;
     }
 }
 

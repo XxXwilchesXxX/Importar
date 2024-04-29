@@ -3,12 +3,14 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Importar.DAL
+namespace Importar.VIEW
 {
-    internal class controllerImportar
+    internal class importador
     {
-        public DataTable Importarcsv()
+        public DataTable Importarcsv(out int numFilas)
         {
+            numFilas = 0; // Inicializamos el contador de filas importadas
+
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Filter = "Archivos CSV (*.csv)|*.csv|Todos los archivos (*.*)|*.*",
@@ -32,6 +34,7 @@ namespace Importar.DAL
                         }
                     }
 
+                    numFilas = dt.Rows.Count; // Contar el número de filas importadas
                     return dt;
                 }
                 catch (Exception ex)
@@ -40,7 +43,7 @@ namespace Importar.DAL
                 }
             }
 
-            return null;
+            return null; // Si no se importó nada o hubo un error, devuelve null
         }
     }
 }

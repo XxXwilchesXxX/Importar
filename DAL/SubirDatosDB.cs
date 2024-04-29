@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Importar.controller;
 using System.IO;
 
 namespace Importar.DAL
@@ -10,6 +9,13 @@ namespace Importar.DAL
     internal class SubirDatosDB
     {
         private static int indiceInicio = 0;
+        MySqlConnection connection;
+
+        public SubirDatosDB()
+        {
+            CConexion conexion = new CConexion();
+            connection = conexion.establecerConexion();
+        }
 
         public static void GuardarIndice()
         {
@@ -29,9 +35,13 @@ namespace Importar.DAL
             return 0;
         }
 
-        private bool DatoYaExiste(MySqlConnection connection, DataRow row)
+
+
+
+
+        private bool DatoYaExiste(DataRow row)
         {
-            // Verificar si el dato ya existe en la base de datos
+           
             string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
 
             MySqlCommand command = new MySqlCommand(query, connection);
@@ -45,8 +55,13 @@ namespace Importar.DAL
 
             int count = Convert.ToInt32(command.ExecuteScalar());
 
-            return count > 0; // Si el conteo es mayor que cero, el dato ya existe
+            return count > 0; 
         }
+
+
+
+
+
 
         public void SubirDatos(DataGridView dataGridView, int numDatos, Action<int> reportarProgreso)
         {
@@ -68,16 +83,15 @@ namespace Importar.DAL
 
                 int datosASubir = Math.Min(numDatos, dt.Rows.Count - indiceInicio);
 
-                CConexion conexion = new CConexion();
-                MySqlConnection connection = conexion.establecerConexion();
+
 
                 if (connection.State == ConnectionState.Open)
                 {
                     for (int i = 0; i < datosASubir; i++)
                     {
-                        if (!DatoYaExiste(connection, dt.Rows[indiceInicio + i]))
+                        if (!DatoYaExiste( dt.Rows[indiceInicio + i]))
                         {
-                            GuardarDatosEnBaseDeDatos(dt, connection, indiceInicio + i, 1);
+                            GuardarDatosEnBaseDeDatos(dt, indiceInicio + i, 1);
                             reportarProgreso(((i + 1) * 100) / datosASubir); // Reportar progreso como porcentaje
                         }
                     }
@@ -98,13 +112,18 @@ namespace Importar.DAL
             }
         }
 
-        private void GuardarDatosEnBaseDeDatos(DataTable dt, MySqlConnection connection, int indiceInicio, int datosASubir)
+
+
+
+
+
+        private void GuardarDatosEnBaseDeDatos(DataTable dt, int indiceInicio, int datosASubir)
         {
             for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
             {
                 DataRow row = dt.Rows[i];
 
-                if (!DatoYaExiste(connection, row))
+                if (!DatoYaExiste(row))
                 {
                     string query = "INSERT INTO MiTabla (codigo_loc, consec_ctr, codigo_trs, id_emp, valor_ctr, fecha_ctr, estado_ctr) VALUES (@codigo_loc, @consec_ctr, @codigo_trs, @id_emp, @valor_ctr, @fecha_ctr, @estado_ctr)";
 

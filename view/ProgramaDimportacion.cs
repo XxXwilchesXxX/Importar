@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using MySql.Data.MySqlClient;
 using Importar.DAL;
+using Importar.VIEW;
 
 
 
@@ -34,19 +35,26 @@ namespace Importar
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
+            importador objetoDeImportacion = new Importar.VIEW.importador();
+            int numFilas;
 
-
-            controllerImportar objetoDeImportacion = new DAL.controllerImportar();
-            DataTable dt = objetoDeImportacion.Importarcsv();
-
-
+            // Importamos el CSV y obtenemos el número de filas importadas
+            DataTable dt = objetoDeImportacion.Importarcsv(out numFilas);
 
             if (dt != null)
             {
                 Dgv_cuadriculaDedatos.DataSource = dt;
+                // Aquí actualizamos el Label para mostrar el número de filas importadas
+                lblFilasImportadas.Text = $"Filas importadas: {numFilas}";
             }
-
+            else
+            {
+                lblFilasImportadas.Text = "No se importaron datos";
+            }
         }
+
+
+
 
 
 
@@ -85,7 +93,7 @@ namespace Importar
                 prgbProcessing.Visible = true;
                 lblProcessing.Visible = true;
 
-                worker.RunWorkerAsync(); // Inicia el trabajo en segundo plano
+                worker.RunWorkerAsync(); 
             }
             else
             {
