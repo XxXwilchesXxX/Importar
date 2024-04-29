@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.grpAgrupacion = new System.Windows.Forms.GroupBox();
+            this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
+            this.lblFilasImportadas = new System.Windows.Forms.Label();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.prgbProcessing = new System.Windows.Forms.ProgressBar();
             this.txtNumeroDatos = new System.Windows.Forms.TextBox();
@@ -40,27 +41,38 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblFilasImportadas = new System.Windows.Forms.Label();
-            this.grpAgrupacion.SuspendLayout();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.btnDatonuevo = new System.Windows.Forms.Button();
+            this.gpbAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // grpAgrupacion
+            // gpbAgrupacion
             // 
-            this.grpAgrupacion.BackColor = System.Drawing.SystemColors.Info;
-            this.grpAgrupacion.Controls.Add(this.lblFilasImportadas);
-            this.grpAgrupacion.Controls.Add(this.lblProcessing);
-            this.grpAgrupacion.Controls.Add(this.prgbProcessing);
-            this.grpAgrupacion.Controls.Add(this.txtNumeroDatos);
-            this.grpAgrupacion.Controls.Add(this.btnSubirDB);
-            this.grpAgrupacion.Controls.Add(this.btnImportar);
-            this.grpAgrupacion.Controls.Add(this.Dgv_cuadriculaDedatos);
-            this.grpAgrupacion.Location = new System.Drawing.Point(12, 12);
-            this.grpAgrupacion.Name = "grpAgrupacion";
-            this.grpAgrupacion.Size = new System.Drawing.Size(769, 466);
-            this.grpAgrupacion.TabIndex = 0;
-            this.grpAgrupacion.TabStop = false;
+            this.gpbAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.gpbAgrupacion.Controls.Add(this.btnDatonuevo);
+            this.gpbAgrupacion.Controls.Add(this.lblFilasImportadas);
+            this.gpbAgrupacion.Controls.Add(this.lblProcessing);
+            this.gpbAgrupacion.Controls.Add(this.prgbProcessing);
+            this.gpbAgrupacion.Controls.Add(this.txtNumeroDatos);
+            this.gpbAgrupacion.Controls.Add(this.btnSubirDB);
+            this.gpbAgrupacion.Controls.Add(this.btnImportar);
+            this.gpbAgrupacion.Controls.Add(this.Dgv_cuadriculaDedatos);
+            this.gpbAgrupacion.Location = new System.Drawing.Point(12, 12);
+            this.gpbAgrupacion.Name = "gpbAgrupacion";
+            this.gpbAgrupacion.Size = new System.Drawing.Size(769, 466);
+            this.gpbAgrupacion.TabIndex = 0;
+            this.gpbAgrupacion.TabStop = false;
+            // 
+            // lblFilasImportadas
+            // 
+            this.lblFilasImportadas.AutoSize = true;
+            this.lblFilasImportadas.Location = new System.Drawing.Point(18, 440);
+            this.lblFilasImportadas.Name = "lblFilasImportadas";
+            this.lblFilasImportadas.Size = new System.Drawing.Size(116, 13);
+            this.lblFilasImportadas.TabIndex = 1;
+            this.lblFilasImportadas.Text = "Esperando Importacion";
             // 
             // lblProcessing
             // 
@@ -122,14 +134,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // lblFilasImportadas
+            // btnDatonuevo
             // 
-            this.lblFilasImportadas.AutoSize = true;
-            this.lblFilasImportadas.Location = new System.Drawing.Point(18, 440);
-            this.lblFilasImportadas.Name = "lblFilasImportadas";
-            this.lblFilasImportadas.Size = new System.Drawing.Size(116, 13);
-            this.lblFilasImportadas.TabIndex = 1;
-            this.lblFilasImportadas.Text = "Esperando Importacion";
+            this.btnDatonuevo.Location = new System.Drawing.Point(637, 430);
+            this.btnDatonuevo.Name = "btnDatonuevo";
+            this.btnDatonuevo.Size = new System.Drawing.Size(124, 23);
+            this.btnDatonuevo.TabIndex = 8;
+            this.btnDatonuevo.Text = "Agregar un nuevo dato ";
+            this.btnDatonuevo.UseVisualStyleBackColor = true;
+            this.btnDatonuevo.Click += new System.EventHandler(this.btnDatonuevo_Click);
             // 
             // software
             // 
@@ -137,11 +150,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(788, 490);
-            this.Controls.Add(this.grpAgrupacion);
+            this.Controls.Add(this.gpbAgrupacion);
             this.Name = "software";
             this.Text = "Programa de insertar archivo CSV";
-            this.grpAgrupacion.ResumeLayout(false);
-            this.grpAgrupacion.PerformLayout();
+            this.gpbAgrupacion.ResumeLayout(false);
+            this.gpbAgrupacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -150,7 +163,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpAgrupacion;
+        private System.Windows.Forms.GroupBox gpbAgrupacion;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView Dgv_cuadriculaDedatos;
         private System.Windows.Forms.Button btnImportar;
@@ -162,6 +175,8 @@
         private System.Windows.Forms.Label lblProcessing;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblFilasImportadas;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.Windows.Forms.Button btnDatonuevo;
     }
 }
 

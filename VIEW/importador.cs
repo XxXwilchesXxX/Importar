@@ -9,7 +9,7 @@ namespace Importar.VIEW
     {
         public DataTable Importarcsv(out int numFilas)
         {
-            numFilas = 0; // Inicializamos el contador de filas importadas
+            numFilas = 0; 
 
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -34,7 +34,7 @@ namespace Importar.VIEW
                         }
                     }
 
-                    numFilas = dt.Rows.Count; // Contar el número de filas importadas
+                    numFilas = dt.Rows.Count; 
                     return dt;
                 }
                 catch (Exception ex)
@@ -43,7 +43,12 @@ namespace Importar.VIEW
                 }
             }
 
-            return null; // Si no se importó nada o hubo un error, devuelve null
+            return null;
+        }
+
+        internal DataTable Importarcsv()
+        {
+            throw new NotImplementedException();
         }
     }
 }

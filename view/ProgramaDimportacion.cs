@@ -20,6 +20,9 @@ namespace Importar
 {
     public partial class software : Form
     {
+    
+
+        public DataGridView DgvCuadriculaDeDatos { get; private set; }
 
 
 
@@ -30,21 +33,16 @@ namespace Importar
       
         }
 
-
-
-
         private void btnImportar_Click(object sender, EventArgs e)
         {
             importador objetoDeImportacion = new Importar.VIEW.importador();
             int numFilas;
 
-            // Importamos el CSV y obtenemos el número de filas importadas
             DataTable dt = objetoDeImportacion.Importarcsv(out numFilas);
 
             if (dt != null)
             {
                 Dgv_cuadriculaDedatos.DataSource = dt;
-                // Aquí actualizamos el Label para mostrar el número de filas importadas
                 lblFilasImportadas.Text = $"Filas importadas: {numFilas}";
             }
             else
@@ -52,10 +50,6 @@ namespace Importar
                 lblFilasImportadas.Text = "No se importaron datos";
             }
         }
-
-
-
-
 
 
         private void btnSubirDB_Click(object sender, EventArgs e)
@@ -102,9 +96,22 @@ namespace Importar
         }
 
 
+        private void btnDatonuevo_Click(object sender, EventArgs e)
+        {
+            AgregarDatos nuevoForm = new AgregarDatos(Dgv_cuadriculaDedatos, lblFilasImportadas);
+            if (nuevoForm.ShowDialog() == DialogResult.OK)
+            {
+      
+            }
+        }
     }
-
 }
+
+
+
+
+
+
 
 
 
