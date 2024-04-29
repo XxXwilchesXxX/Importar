@@ -58,7 +58,6 @@
     <Compile Include="VIEW\AgregarDatos.Designer.cs">
       <DependentUpon>AgregarDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\Dgv_cuadriculaDedatos.cs" />
     <Compile Include="VIEW\importador.cs" />
     <Compile Include="VIEW\ProgramaDimportacion.cs">
       <SubType>Form</SubType>

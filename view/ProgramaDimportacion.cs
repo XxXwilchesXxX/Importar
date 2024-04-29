@@ -20,19 +20,16 @@ namespace Importar
 {
     public partial class software : Form
     {
-    
-
         public DataGridView DgvCuadriculaDeDatos { get; private set; }
-
-
 
         public software()
         {
             InitializeComponent();
-
-      
         }
 
+
+
+        //Funcion del boton de IMPORTAR
         private void btnImportar_Click(object sender, EventArgs e)
         {
             importador objetoDeImportacion = new Importar.VIEW.importador();
@@ -52,6 +49,8 @@ namespace Importar
         }
 
 
+
+        //Funcion del boton de SubirDatosDB
         private void btnSubirDB_Click(object sender, EventArgs e)
         {
             int numDatos;
@@ -87,7 +86,7 @@ namespace Importar
                 prgbProcessing.Visible = true;
                 lblProcessing.Visible = true;
 
-                worker.RunWorkerAsync(); 
+                worker.RunWorkerAsync();
             }
             else
             {
@@ -96,12 +95,14 @@ namespace Importar
         }
 
 
+
+        //Funcion del boton de Dato nuevo
         private void btnDatonuevo_Click(object sender, EventArgs e)
         {
             AgregarDatos nuevoForm = new AgregarDatos(Dgv_cuadriculaDedatos, lblFilasImportadas);
             if (nuevoForm.ShowDialog() == DialogResult.OK)
             {
-      
+
             }
         }
     }
