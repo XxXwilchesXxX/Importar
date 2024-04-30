@@ -24,6 +24,7 @@ namespace Importar
         public software()
         {
             InitializeComponent();
+
         }
 
 
@@ -104,8 +105,25 @@ namespace Importar
 
             }
         }
+
+        private void btnActualizaryeliminar_Click(object sender, EventArgs e)
+        {
+            // Crear el formulario y pasarle el DataGridView
+            if (Dgv_cuadriculaDedatos.SelectedRows.Count > 0) // Asegurarse de que haya filas seleccionadas
+            {
+                DataGridViewRow selectedRow = Dgv_cuadriculaDedatos.SelectedRows[0];
+                EditaryEliminar formEditaryEliminar = new EditaryEliminar(Dgv_cuadriculaDedatos, selectedRow);
+                formEditaryEliminar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para editar.");
+            }
+        }
     }
+
 }
+
 
 
 

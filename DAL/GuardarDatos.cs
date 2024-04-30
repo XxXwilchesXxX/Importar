@@ -44,5 +44,10 @@ namespace Importar.DAL
 
             MessageBox.Show("Datos agregados con éxito al DataGridView.");
         }
+
+        internal void ActualizarDataGridView(DataGridView dgvCuadriculaDedatos, int rowIndex, string text1, string text2, string text3, string text4, string text5, string text6, string text7)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

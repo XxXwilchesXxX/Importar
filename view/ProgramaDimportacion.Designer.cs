@@ -43,6 +43,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.btnDatonuevo = new System.Windows.Forms.Button();
+            this.btnActualizaryeliminar = new System.Windows.Forms.Button();
             this.gpbAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -51,6 +52,7 @@
             // gpbAgrupacion
             // 
             this.gpbAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.gpbAgrupacion.Controls.Add(this.btnActualizaryeliminar);
             this.gpbAgrupacion.Controls.Add(this.btnDatonuevo);
             this.gpbAgrupacion.Controls.Add(this.lblFilasImportadas);
             this.gpbAgrupacion.Controls.Add(this.lblProcessing);
@@ -144,6 +146,16 @@
             this.btnDatonuevo.UseVisualStyleBackColor = true;
             this.btnDatonuevo.Click += new System.EventHandler(this.btnDatonuevo_Click);
             // 
+            // btnActualizaryeliminar
+            // 
+            this.btnActualizaryeliminar.Location = new System.Drawing.Point(490, 430);
+            this.btnActualizaryeliminar.Name = "btnActualizaryeliminar";
+            this.btnActualizaryeliminar.Size = new System.Drawing.Size(109, 23);
+            this.btnActualizaryeliminar.TabIndex = 9;
+            this.btnActualizaryeliminar.Text = "Actualizar y eliminar";
+            this.btnActualizaryeliminar.UseVisualStyleBackColor = true;
+            this.btnActualizaryeliminar.Click += new System.EventHandler(this.btnActualizaryeliminar_Click);
+            // 
             // software
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +189,7 @@
         private System.Windows.Forms.Label lblFilasImportadas;
         private System.ComponentModel.BackgroundWorker backgroundWorker4;
         private System.Windows.Forms.Button btnDatonuevo;
+        private System.Windows.Forms.Button btnActualizaryeliminar;
     }
 }
 
