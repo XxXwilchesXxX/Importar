@@ -8,6 +8,9 @@ namespace Importar.DAL
 {
     internal class SubirDatosDB
     {
+
+
+
         private static int indiceInicio = 0;
         MySqlConnection connection;
 

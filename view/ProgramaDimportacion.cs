@@ -20,7 +20,6 @@ namespace Importar
 {
     public partial class software : Form
     {
-        public DataGridView DgvCuadriculaDeDatos { get; private set; }
 
         public software()
         {

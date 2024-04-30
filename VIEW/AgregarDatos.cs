@@ -28,13 +28,13 @@ namespace Importar.VIEW
 
             // Crear una nueva fila y asignar valores
             DataRow newRow = dt.NewRow();
-            newRow["codigo_loc"] = txtCodigo_loc.Text;
-            newRow["consec_ctr"] = txtConsec_ctr.Text;
-            newRow["codigo_trs"] = txtCodigo_trs.Text;
-            newRow["id_emp"] = txtId_emp.Text;
-            newRow["valor_ctr"] = txtValor_ctr.Text;
-            newRow["fecha_ctr"] = txtFecha_ctr.Text;
-            newRow["estado_ctr"] = txtEstado_ctr.Text;
+            newRow["codigo_loc"] = txtSave_codigo_loc.Text;
+            newRow["consec_ctr"] = txtSave_consec_ctr.Text;
+            newRow["codigo_trs"] = txtSave_codigo_trs.Text;
+            newRow["id_emp"] = txtSave_id_emp.Text;
+            newRow["valor_ctr"] = txtSave_valor_ctr.Text;
+            newRow["fecha_ctr"] = txtSave_fecha_ctr.Text;
+            newRow["estado_ctr"] = txtSave_estado_ctr.Text;
 
             // Agregar la nueva fila al DataTable
             dt.Rows.Add(newRow);
@@ -43,13 +43,13 @@ namespace Importar.VIEW
             MessageBox.Show("Dato agregado con éxito al DataGridView.");
 
             // Limpiar campos de texto
-            txtCodigo_loc.Text = "";
-            txtConsec_ctr.Text = "";
-            txtCodigo_trs.Text = "";
-            txtId_emp.Text = "";
-            txtValor_ctr.Text = "";
-            txtFecha_ctr.Text = "";
-            txtEstado_ctr.Text = "";
+            txtSave_codigo_loc.Text = "";
+            txtSave_consec_ctr.Text = "";
+            txtSave_codigo_trs.Text = "";
+            txtSave_id_emp.Text = "";
+            txtSave_valor_ctr.Text = "";
+            txtSave_fecha_ctr.Text = "";
+            txtSave_estado_ctr.Text = "";
 
             // Actualizar el Label con el número de filas
             lblFilasImportadas.Text = $"Filas importadas: {dt.Rows.Count}";

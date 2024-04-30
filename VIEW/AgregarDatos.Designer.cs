@@ -30,13 +30,13 @@
         {
             this.gpbGuardar = new System.Windows.Forms.GroupBox();
             this.btnGuardarDatos = new System.Windows.Forms.Button();
-            this.txtEstado_ctr = new System.Windows.Forms.TextBox();
-            this.txtFecha_ctr = new System.Windows.Forms.TextBox();
-            this.txtValor_ctr = new System.Windows.Forms.TextBox();
-            this.txtId_emp = new System.Windows.Forms.TextBox();
-            this.txtCodigo_trs = new System.Windows.Forms.TextBox();
-            this.txtConsec_ctr = new System.Windows.Forms.TextBox();
-            this.txtCodigo_loc = new System.Windows.Forms.TextBox();
+            this.txtSave_estado_ctr = new System.Windows.Forms.TextBox();
+            this.txtSave_fecha_ctr = new System.Windows.Forms.TextBox();
+            this.txtSave_valor_ctr = new System.Windows.Forms.TextBox();
+            this.txtSave_id_emp = new System.Windows.Forms.TextBox();
+            this.txtSave_codigo_trs = new System.Windows.Forms.TextBox();
+            this.txtSave_consec_ctr = new System.Windows.Forms.TextBox();
+            this.txtSave_codigo_loc = new System.Windows.Forms.TextBox();
             this.lblestado_ctr = new System.Windows.Forms.Label();
             this.lblfecha_ctr = new System.Windows.Forms.Label();
             this.lblvalor_ctr = new System.Windows.Forms.Label();
@@ -52,13 +52,13 @@
             // 
             this.gpbGuardar.Controls.Add(this.lblcodigo_loc);
             this.gpbGuardar.Controls.Add(this.btnGuardarDatos);
-            this.gpbGuardar.Controls.Add(this.txtEstado_ctr);
-            this.gpbGuardar.Controls.Add(this.txtFecha_ctr);
-            this.gpbGuardar.Controls.Add(this.txtValor_ctr);
-            this.gpbGuardar.Controls.Add(this.txtId_emp);
-            this.gpbGuardar.Controls.Add(this.txtCodigo_trs);
-            this.gpbGuardar.Controls.Add(this.txtConsec_ctr);
-            this.gpbGuardar.Controls.Add(this.txtCodigo_loc);
+            this.gpbGuardar.Controls.Add(this.txtSave_estado_ctr);
+            this.gpbGuardar.Controls.Add(this.txtSave_fecha_ctr);
+            this.gpbGuardar.Controls.Add(this.txtSave_valor_ctr);
+            this.gpbGuardar.Controls.Add(this.txtSave_id_emp);
+            this.gpbGuardar.Controls.Add(this.txtSave_codigo_trs);
+            this.gpbGuardar.Controls.Add(this.txtSave_consec_ctr);
+            this.gpbGuardar.Controls.Add(this.txtSave_codigo_loc);
             this.gpbGuardar.Controls.Add(this.lblestado_ctr);
             this.gpbGuardar.Controls.Add(this.lblfecha_ctr);
             this.gpbGuardar.Controls.Add(this.lblvalor_ctr);
@@ -82,54 +82,54 @@
             this.btnGuardarDatos.UseVisualStyleBackColor = true;
             this.btnGuardarDatos.Click += new System.EventHandler(this.btnGuardarDatos_Click);
             // 
-            // txtEstado_ctr
+            // txtSave_estado_ctr
             // 
-            this.txtEstado_ctr.Location = new System.Drawing.Point(561, 68);
-            this.txtEstado_ctr.Name = "txtEstado_ctr";
-            this.txtEstado_ctr.Size = new System.Drawing.Size(73, 20);
-            this.txtEstado_ctr.TabIndex = 13;
+            this.txtSave_estado_ctr.Location = new System.Drawing.Point(561, 68);
+            this.txtSave_estado_ctr.Name = "txtSave_estado_ctr";
+            this.txtSave_estado_ctr.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_estado_ctr.TabIndex = 13;
             // 
-            // txtFecha_ctr
+            // txtSave_fecha_ctr
             // 
-            this.txtFecha_ctr.Location = new System.Drawing.Point(472, 68);
-            this.txtFecha_ctr.Name = "txtFecha_ctr";
-            this.txtFecha_ctr.Size = new System.Drawing.Size(73, 20);
-            this.txtFecha_ctr.TabIndex = 12;
+            this.txtSave_fecha_ctr.Location = new System.Drawing.Point(472, 68);
+            this.txtSave_fecha_ctr.Name = "txtSave_fecha_ctr";
+            this.txtSave_fecha_ctr.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_fecha_ctr.TabIndex = 12;
             // 
-            // txtValor_ctr
+            // txtSave_valor_ctr
             // 
-            this.txtValor_ctr.Location = new System.Drawing.Point(382, 68);
-            this.txtValor_ctr.Name = "txtValor_ctr";
-            this.txtValor_ctr.Size = new System.Drawing.Size(73, 20);
-            this.txtValor_ctr.TabIndex = 11;
+            this.txtSave_valor_ctr.Location = new System.Drawing.Point(382, 68);
+            this.txtSave_valor_ctr.Name = "txtSave_valor_ctr";
+            this.txtSave_valor_ctr.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_valor_ctr.TabIndex = 11;
             // 
-            // txtId_emp
+            // txtSave_id_emp
             // 
-            this.txtId_emp.Location = new System.Drawing.Point(298, 68);
-            this.txtId_emp.Name = "txtId_emp";
-            this.txtId_emp.Size = new System.Drawing.Size(73, 20);
-            this.txtId_emp.TabIndex = 10;
+            this.txtSave_id_emp.Location = new System.Drawing.Point(298, 68);
+            this.txtSave_id_emp.Name = "txtSave_id_emp";
+            this.txtSave_id_emp.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_id_emp.TabIndex = 10;
             // 
-            // txtCodigo_trs
+            // txtSave_codigo_trs
             // 
-            this.txtCodigo_trs.Location = new System.Drawing.Point(204, 68);
-            this.txtCodigo_trs.Name = "txtCodigo_trs";
-            this.txtCodigo_trs.Size = new System.Drawing.Size(73, 20);
-            this.txtCodigo_trs.TabIndex = 9;
+            this.txtSave_codigo_trs.Location = new System.Drawing.Point(204, 68);
+            this.txtSave_codigo_trs.Name = "txtSave_codigo_trs";
+            this.txtSave_codigo_trs.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_codigo_trs.TabIndex = 9;
             // 
-            // txtConsec_ctr
+            // txtSave_consec_ctr
             // 
-            this.txtConsec_ctr.Location = new System.Drawing.Point(109, 68);
-            this.txtConsec_ctr.Name = "txtConsec_ctr";
-            this.txtConsec_ctr.Size = new System.Drawing.Size(73, 20);
-            this.txtConsec_ctr.TabIndex = 8;
+            this.txtSave_consec_ctr.Location = new System.Drawing.Point(109, 68);
+            this.txtSave_consec_ctr.Name = "txtSave_consec_ctr";
+            this.txtSave_consec_ctr.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_consec_ctr.TabIndex = 8;
             // 
-            // txtCodigo_loc
+            // txtSave_codigo_loc
             // 
-            this.txtCodigo_loc.Location = new System.Drawing.Point(18, 68);
-            this.txtCodigo_loc.Name = "txtCodigo_loc";
-            this.txtCodigo_loc.Size = new System.Drawing.Size(73, 20);
-            this.txtCodigo_loc.TabIndex = 7;
+            this.txtSave_codigo_loc.Location = new System.Drawing.Point(18, 68);
+            this.txtSave_codigo_loc.Name = "txtSave_codigo_loc";
+            this.txtSave_codigo_loc.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_codigo_loc.TabIndex = 7;
             // 
             // lblestado_ctr
             // 
@@ -219,13 +219,13 @@
         private System.Windows.Forms.Label lblid_emp;
         private System.Windows.Forms.Label lblcodigo_trs;
         private System.Windows.Forms.Label lblconsec_ctr;
-        private System.Windows.Forms.TextBox txtEstado_ctr;
-        private System.Windows.Forms.TextBox txtFecha_ctr;
-        private System.Windows.Forms.TextBox txtValor_ctr;
-        private System.Windows.Forms.TextBox txtId_emp;
-        private System.Windows.Forms.TextBox txtCodigo_trs;
-        private System.Windows.Forms.TextBox txtConsec_ctr;
-        private System.Windows.Forms.TextBox txtCodigo_loc;
+        private System.Windows.Forms.TextBox txtSave_estado_ctr;
+        private System.Windows.Forms.TextBox txtSave_fecha_ctr;
+        private System.Windows.Forms.TextBox txtSave_valor_ctr;
+        private System.Windows.Forms.TextBox txtSave_id_emp;
+        private System.Windows.Forms.TextBox txtSave_codigo_trs;
+        private System.Windows.Forms.TextBox txtSave_consec_ctr;
+        private System.Windows.Forms.TextBox txtSave_codigo_loc;
         private System.Windows.Forms.Button btnGuardarDatos;
         private System.Windows.Forms.Label lblcodigo_loc;
     }
