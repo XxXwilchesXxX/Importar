@@ -106,6 +106,9 @@ namespace Importar
             }
         }
 
+
+        //Funcion del boton de Actualizar y eliminar
+
         private void btnActualizaryeliminar_Click(object sender, EventArgs e)
         {
             // Crear el formulario y pasarle el DataGridView
