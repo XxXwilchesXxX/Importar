@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Importar.DAL
+namespace Importar.VIEW
 {
     internal class EditaryEliminarDatos
     {
@@ -17,7 +17,7 @@ namespace Importar.DAL
             }
 
             // Crear una nueva instancia del formulario para editar y eliminar datos
-            Importar.VIEW.EditaryEliminar form = new Importar.VIEW.EditaryEliminar();
+            EditaryEliminar form = new EditaryEliminar();
 
             // Asignar valores a los textboxes en el formulario
             form.txtEdit_eliminar_codigo_loc.Text = filaSeleccionada.Cells["codigo_loc"].Value?.ToString();

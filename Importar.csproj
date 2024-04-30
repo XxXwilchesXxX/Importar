@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\CConexion.cs" />
-    <Compile Include="DAL\EditaryEliminarDatos.cs" />
+    <Compile Include="VIEW\EditaryEliminarDatos.cs" />
     <Compile Include="DAL\GuardarDatos.cs" />
     <Compile Include="DAL\SubirDatosDB.cs" />
     <Compile Include="VIEW\AgregarDatos.cs">

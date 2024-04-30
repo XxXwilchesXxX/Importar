@@ -21,8 +21,7 @@ namespace Importar.VIEW
 
             // Asignar valores a los TextBox con los datos de la fila seleccionada
             txtEdit_eliminar_codigo_loc.Text = row.Cells["codigo_loc"].Value?.ToString();
-            txtEdit_eliminar_consec_ctr.Text = row.Cells["consec_ctr"].Value?.ToString();
-            txtEdit_eliminar_codigo_trs.Text = row.Cells["codigo_trs"].Value?.ToString();
+            txtEdit_eliminar_consec_ctr.Text = row.Cells["consec_ctr"].Value?.ToString(); txtEdit_eliminar_codigo_trs.Text = row.Cells["codigo_trs"].Value?.ToString();
             txtEdit_eliminar_id_emp.Text = row.Cells["id_emp"].Value?.ToString();
             txtEdit_eliminar_valor_ctr.Text = row.Cells["valor_ctr"].Value?.ToString();
             txtEdit_eliminar_fecha_ctr.Text = row.Cells["fecha_ctr"].Value?.ToString();
@@ -43,6 +42,19 @@ namespace Importar.VIEW
             Dgv_cuadriculaDedatos.Refresh(); // Refrescar el DataGridView para mostrar cambios
             MessageBox.Show("Dato actualizado con éxito.");
             this.Close(); // Cerrar el formulario al finalizar
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("¿Está seguro de que desea eliminar esta fila?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                // Eliminar la fila del DataGridView
+                Dgv_cuadriculaDedatos.Rows.Remove(selectedRow);
+                MessageBox.Show("Fila eliminada con éxito.");
+                this.Close(); // Cerrar el formulario después de eliminar
+            }
+
         }
     }
 }
