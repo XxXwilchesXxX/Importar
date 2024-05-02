@@ -8,6 +8,10 @@ namespace Importar.VIEW
         private DataGridView Dgv_cuadriculaDedatos; // DataGridView del formulario principal
         private DataGridViewRow selectedRow; // Fila seleccionada para editar
 
+        public EditaryEliminar()
+        {
+        }
+
 
         // Constructor para recibir el DataGridView y la fila seleccionada
         public EditaryEliminar(DataGridView dgv, DataGridViewRow row)

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-using MySql.Data.MySqlClient;
+
 using Importar.DAL;
 using Importar.VIEW;
 
@@ -32,7 +32,8 @@ namespace Importar
         //Funcion del boton de IMPORTAR
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            importador objetoDeImportacion = new Importar.VIEW.importador();
+            importador objetoDeImportacion = new importador();
+
             int numFilas;
 
             DataTable dt = objetoDeImportacion.Importarcsv(out numFilas);

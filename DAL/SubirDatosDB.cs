@@ -1,146 +1,107 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.IO;
 
 namespace Importar.DAL
 {
     internal class SubirDatosDB
     {
-
-
-
         private static int indiceInicio = 0;
-        MySqlConnection connection;
+        private SqlConnection connection;
 
         public SubirDatosDB()
         {
-            CConexion conexion = new CConexion();
-            connection = conexion.establecerConexion();
+            var conexion = new ConexionSqlserver();
+            connection = conexion.ObtenerConexion();
+            AbrirConexion(); // Asegúrate de abrir la conexión al inicializar
         }
 
-        public static void GuardarIndice()
+        private void AbrirConexion()
+        {
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+        }
+
+        private void GuardarIndice()
         {
             File.WriteAllText("indiceInicio.txt", indiceInicio.ToString());
         }
 
-        public static int LeerIndice()
-        {
-            if (File.Exists("indiceInicio.txt"))
-            {
-                string contenido = File.ReadAllText("indiceInicio.txt");
-                if (int.TryParse(contenido, out int indice))
-                {
-                    return indice;
-                }
-            }
-            return 0;
-        }
-
-
-
-
-
         private bool DatoYaExiste(DataRow row)
         {
-           
-            string query = "SELECT COUNT(*) FROM MiTabla WHERE codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr AND estado_ctr = @estado_ctr";
+            var query = "SELECT COUNT(*) FROM MiTabla WHERE " +
+                        "codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs " +
+                        "AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr " +
+                        "AND estado_ctr = @estado_ctr";
 
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
-            command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
-            command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
-            command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
-            command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
-            command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
-            command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
+                command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
+                command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
+                command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
+                command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
+                command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
+                command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
 
-            int count = Convert.ToInt32(command.ExecuteScalar());
-
-            return count > 0; 
+                return Convert.ToInt32(command.ExecuteScalar()) > 0;
+            }
         }
-
-
-
-
-
 
         public void SubirDatos(DataGridView dataGridView, int numDatos, Action<int> reportarProgreso)
         {
             try
             {
-                DataTable dt = (DataTable)dataGridView.DataSource;
-
+                var dt = (DataTable)dataGridView.DataSource;
                 if (dt == null || dt.Rows.Count == 0)
                 {
                     MessageBox.Show("No hay datos para subir.");
                     return;
                 }
 
-                if (indiceInicio >= dt.Rows.Count)
-                {
-                    MessageBox.Show("No hay más datos para subir.");
-                    return;
-                }
-
                 int datosASubir = Math.Min(numDatos, dt.Rows.Count - indiceInicio);
 
-
-
-                if (connection.State == ConnectionState.Open)
+                for (int i = 0; i < datosASubir; i++)
                 {
-                    for (int i = 0; i < datosASubir; i++)
+                    var row = dt.Rows[indiceInicio + i];
+                    if (!DatoYaExiste(row))
                     {
-                        if (!DatoYaExiste( dt.Rows[indiceInicio + i]))
-                        {
-                            GuardarDatosEnBaseDeDatos(dt, indiceInicio + i, 1);
-                            reportarProgreso(((i + 1) * 100) / datosASubir); // Reportar progreso como porcentaje
-                        }
+                        GuardarDatosEnBaseDeDatos(row);
+                        reportarProgreso(((i + 1) * 100) / datosASubir);
                     }
-
-                    indiceInicio += datosASubir;
-                    GuardarIndice();
-
-                    MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
                 }
-                else
-                {
-                    MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
-                }
+
+                indiceInicio += datosASubir;
+                GuardarIndice();
+
+                MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al subir los datos a la base de datos: " + ex.Message);
+                MessageBox.Show("Error al subir los datos: " + ex.Message);
             }
         }
 
-
-
-
-
-
-        private void GuardarDatosEnBaseDeDatos(DataTable dt, int indiceInicio, int datosASubir)
+        private void GuardarDatosEnBaseDeDatos(DataRow row)
         {
-            for (int i = indiceInicio; i < indiceInicio + datosASubir; i++)
+            var query = "INSERT INTO MiTabla (codigo_loc, consec_ctr, codigo_trs, id_emp, valor_ctr, fecha_ctr, estado_ctr) " +
+                        "VALUES (@codigo_loc, @consec_ctr, @codigo_trs, @id_emp, @valor_ctr, @fecha_ctr, @estado_ctr)";
+
+            using (var command = new SqlCommand(query, connection))
             {
-                DataRow row = dt.Rows[i];
+                command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
+                command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
+                command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
+                command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
+                command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
+                command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
+                command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
 
-                if (!DatoYaExiste(row))
-                {
-                    string query = "INSERT INTO MiTabla (codigo_loc, consec_ctr, codigo_trs, id_emp, valor_ctr, fecha_ctr, estado_ctr) VALUES (@codigo_loc, @consec_ctr, @codigo_trs, @id_emp, @valor_ctr, @fecha_ctr, @estado_ctr)";
-
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@codigo_loc", row["codigo_loc"]);
-                    command.Parameters.AddWithValue("@consec_ctr", row["consec_ctr"]);
-                    command.Parameters.AddWithValue("@codigo_trs", row["codigo_trs"]);
-                    command.Parameters.AddWithValue("@id_emp", row["id_emp"]);
-                    command.Parameters.AddWithValue("@valor_ctr", row["valor_ctr"]);
-                    command.Parameters.AddWithValue("@fecha_ctr", row["fecha_ctr"]);
-                    command.Parameters.AddWithValue("@estado_ctr", row["estado_ctr"]);
-
-                    command.ExecuteNonQuery();
-                }
+                command.ExecuteNonQuery();
             }
         }
     }

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
+            this.btnActualizaryeliminar = new System.Windows.Forms.Button();
+            this.btnDatonuevo = new System.Windows.Forms.Button();
             this.lblFilasImportadas = new System.Windows.Forms.Label();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.prgbProcessing = new System.Windows.Forms.ProgressBar();
@@ -42,8 +44,6 @@
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
-            this.btnDatonuevo = new System.Windows.Forms.Button();
-            this.btnActualizaryeliminar = new System.Windows.Forms.Button();
             this.gpbAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -66,6 +66,26 @@
             this.gpbAgrupacion.Size = new System.Drawing.Size(769, 466);
             this.gpbAgrupacion.TabIndex = 0;
             this.gpbAgrupacion.TabStop = false;
+            // 
+            // btnActualizaryeliminar
+            // 
+            this.btnActualizaryeliminar.Location = new System.Drawing.Point(490, 430);
+            this.btnActualizaryeliminar.Name = "btnActualizaryeliminar";
+            this.btnActualizaryeliminar.Size = new System.Drawing.Size(109, 23);
+            this.btnActualizaryeliminar.TabIndex = 9;
+            this.btnActualizaryeliminar.Text = "Actualizar y eliminar";
+            this.btnActualizaryeliminar.UseVisualStyleBackColor = true;
+            this.btnActualizaryeliminar.Click += new System.EventHandler(this.btnActualizaryeliminar_Click);
+            // 
+            // btnDatonuevo
+            // 
+            this.btnDatonuevo.Location = new System.Drawing.Point(637, 430);
+            this.btnDatonuevo.Name = "btnDatonuevo";
+            this.btnDatonuevo.Size = new System.Drawing.Size(124, 23);
+            this.btnDatonuevo.TabIndex = 8;
+            this.btnDatonuevo.Text = "Agregar un nuevo dato ";
+            this.btnDatonuevo.UseVisualStyleBackColor = true;
+            this.btnDatonuevo.Click += new System.EventHandler(this.btnDatonuevo_Click);
             // 
             // lblFilasImportadas
             // 
@@ -135,26 +155,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnDatonuevo
-            // 
-            this.btnDatonuevo.Location = new System.Drawing.Point(637, 430);
-            this.btnDatonuevo.Name = "btnDatonuevo";
-            this.btnDatonuevo.Size = new System.Drawing.Size(124, 23);
-            this.btnDatonuevo.TabIndex = 8;
-            this.btnDatonuevo.Text = "Agregar un nuevo dato ";
-            this.btnDatonuevo.UseVisualStyleBackColor = true;
-            this.btnDatonuevo.Click += new System.EventHandler(this.btnDatonuevo_Click);
-            // 
-            // btnActualizaryeliminar
-            // 
-            this.btnActualizaryeliminar.Location = new System.Drawing.Point(490, 430);
-            this.btnActualizaryeliminar.Name = "btnActualizaryeliminar";
-            this.btnActualizaryeliminar.Size = new System.Drawing.Size(109, 23);
-            this.btnActualizaryeliminar.TabIndex = 9;
-            this.btnActualizaryeliminar.Text = "Actualizar y eliminar";
-            this.btnActualizaryeliminar.UseVisualStyleBackColor = true;
-            this.btnActualizaryeliminar.Click += new System.EventHandler(this.btnActualizaryeliminar_Click);
             // 
             // software
             // 
