@@ -6,6 +6,8 @@ namespace Importar.DAL
 {
     internal class GuardarDatos
     {
+
+        //Este método toma un DataGridView y siete valores para agregar como fila nueva.
         public void GuardarEnDataGridView(
             DataGridView dgv,
             string codigoLoc,
@@ -17,6 +19,7 @@ namespace Importar.DAL
             string estadoCtr
         )
         {
+
             if (dgv == null)
             {
                 MessageBox.Show("El DataGridView no está disponible.");
@@ -31,6 +34,7 @@ namespace Importar.DAL
                 return;
             }
 
+            //Se crea una nueva fila (newRow) usando dt.NewRow()
             DataRow newRow = dt.NewRow();
             newRow["codigo_loc"] = codigoLoc;
             newRow["consec_ctr"] = consecCtr;
@@ -39,6 +43,8 @@ namespace Importar.DAL
             newRow["valor_ctr"] = valorCtr;
             newRow["fecha_ctr"] = fechaCtr;
             newRow["estado_ctr"] = estadoCtr;
+
+            
 
             dt.Rows.Add(newRow);
 
