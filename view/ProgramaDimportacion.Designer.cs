@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
-            this.btnActualizaryeliminar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnDatonuevo = new System.Windows.Forms.Button();
             this.lblFilasImportadas = new System.Windows.Forms.Label();
             this.lblProcessing = new System.Windows.Forms.Label();
@@ -52,7 +53,8 @@
             // gpbAgrupacion
             // 
             this.gpbAgrupacion.BackColor = System.Drawing.SystemColors.Info;
-            this.gpbAgrupacion.Controls.Add(this.btnActualizaryeliminar);
+            this.gpbAgrupacion.Controls.Add(this.btnEliminar);
+            this.gpbAgrupacion.Controls.Add(this.btnActualizar);
             this.gpbAgrupacion.Controls.Add(this.btnDatonuevo);
             this.gpbAgrupacion.Controls.Add(this.lblFilasImportadas);
             this.gpbAgrupacion.Controls.Add(this.lblProcessing);
@@ -67,19 +69,29 @@
             this.gpbAgrupacion.TabIndex = 0;
             this.gpbAgrupacion.TabStop = false;
             // 
-            // btnActualizaryeliminar
+            // btnEliminar
             // 
-            this.btnActualizaryeliminar.Location = new System.Drawing.Point(490, 430);
-            this.btnActualizaryeliminar.Name = "btnActualizaryeliminar";
-            this.btnActualizaryeliminar.Size = new System.Drawing.Size(109, 23);
-            this.btnActualizaryeliminar.TabIndex = 9;
-            this.btnActualizaryeliminar.Text = "Actualizar y eliminar";
-            this.btnActualizaryeliminar.UseVisualStyleBackColor = true;
-            this.btnActualizaryeliminar.Click += new System.EventHandler(this.btnActualizaryeliminar_Click);
+            this.btnEliminar.Location = new System.Drawing.Point(416, 435);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(100, 23);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(522, 435);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(109, 23);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "Actualizar ";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizaryeliminar_Click);
             // 
             // btnDatonuevo
             // 
-            this.btnDatonuevo.Location = new System.Drawing.Point(637, 430);
+            this.btnDatonuevo.Location = new System.Drawing.Point(637, 435);
             this.btnDatonuevo.Name = "btnDatonuevo";
             this.btnDatonuevo.Size = new System.Drawing.Size(124, 23);
             this.btnDatonuevo.TabIndex = 8;
@@ -139,7 +151,7 @@
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(146, 23);
             this.btnImportar.TabIndex = 2;
-            this.btnImportar.Text = "Importar";
+            this.btnImportar.Text = "Cargar archivo CSV";
             this.btnImportar.UseVisualStyleBackColor = false;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
@@ -189,7 +201,8 @@
         private System.Windows.Forms.Label lblFilasImportadas;
         private System.ComponentModel.BackgroundWorker backgroundWorker4;
         private System.Windows.Forms.Button btnDatonuevo;
-        private System.Windows.Forms.Button btnActualizaryeliminar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

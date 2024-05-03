@@ -26,13 +26,14 @@ namespace Importar.DAL
             }
         }
 
-        private void GuardarIndice()
-        {
-            File.WriteAllText("indiceInicio.txt", indiceInicio.ToString());
-        }
+        //private void GuardarIndice()
+        //{
+        //    File.WriteAllText("indiceInicio.txt", indiceInicio.ToString());
+        //}
 
         private bool DatoYaExiste(DataRow row)
         {
+            //Abrir conexion con DB
             var query = "SELECT COUNT(*) FROM MiTabla WHERE " +
                         "codigo_loc = @codigo_loc AND consec_ctr = @consec_ctr AND codigo_trs = @codigo_trs " +
                         "AND id_emp = @id_emp AND valor_ctr = @valor_ctr AND fecha_ctr = @fecha_ctr " +
@@ -50,24 +51,24 @@ namespace Importar.DAL
 
                 return Convert.ToInt32(command.ExecuteScalar()) > 0;
             }
+            //Cerrar conexion con DB
         }
 
-        public void SubirDatos(DataGridView dataGridView, int numDatos, Action<int> reportarProgreso)
+        public void SubirDatos(DataTable dtTransacciones, int numDatos, Action<int> reportarProgreso)
         {
             try
             {
-                var dt = (DataTable)dataGridView.DataSource;
-                if (dt == null || dt.Rows.Count == 0)
+                if (dtTransacciones == null || dtTransacciones.Rows.Count == 0)
                 {
                     MessageBox.Show("No hay datos para subir.");
                     return;
                 }
 
-                int datosASubir = Math.Min(numDatos, dt.Rows.Count - indiceInicio);
+                int datosASubir = Math.Min(numDatos, dtTransacciones.Rows.Count - indiceInicio);
 
                 for (int i = 0; i < datosASubir; i++)
                 {
-                    var row = dt.Rows[indiceInicio + i];
+                    var row = dtTransacciones.Rows[indiceInicio + i];
                     if (!DatoYaExiste(row))
                     {
                         GuardarDatosEnBaseDeDatos(row);
@@ -76,7 +77,7 @@ namespace Importar.DAL
                 }
 
                 indiceInicio += datosASubir;
-                GuardarIndice();
+                //GuardarIndice();
 
                 MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
             }

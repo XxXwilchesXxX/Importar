@@ -1,6 +1,6 @@
 ﻿namespace Importar.VIEW
 {
-    partial class AgregarDatos
+    partial class Frm_AgregarDatos
     {
         /// <summary>
         /// Required designer variable.
@@ -77,9 +77,9 @@
             this.lblcodigo_loc.AutoSize = true;
             this.lblcodigo_loc.Location = new System.Drawing.Point(18, 52);
             this.lblcodigo_loc.Name = "lblcodigo_loc";
-            this.lblcodigo_loc.Size = new System.Drawing.Size(59, 13);
+            this.lblcodigo_loc.Size = new System.Drawing.Size(36, 13);
             this.lblcodigo_loc.TabIndex = 15;
-            this.lblcodigo_loc.Text = "codigo_loc";
+            this.lblcodigo_loc.Text = "Local:";
             // 
             // btnGuardarDatos
             // 
@@ -93,7 +93,7 @@
             // 
             // txtSave_estado_ctr
             // 
-            this.txtSave_estado_ctr.Location = new System.Drawing.Point(210, 68);
+            this.txtSave_estado_ctr.Location = new System.Drawing.Point(127, 255);
             this.txtSave_estado_ctr.Name = "txtSave_estado_ctr";
             this.txtSave_estado_ctr.Size = new System.Drawing.Size(73, 20);
             this.txtSave_estado_ctr.TabIndex = 13;
@@ -128,22 +128,22 @@
             // 
             // txtSave_consec_ctr
             // 
-            this.txtSave_consec_ctr.Location = new System.Drawing.Point(117, 68);
+            this.txtSave_consec_ctr.Location = new System.Drawing.Point(206, 52);
             this.txtSave_consec_ctr.Name = "txtSave_consec_ctr";
-            this.txtSave_consec_ctr.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_consec_ctr.Size = new System.Drawing.Size(110, 20);
             this.txtSave_consec_ctr.TabIndex = 8;
             // 
             // txtSave_codigo_loc
             // 
-            this.txtSave_codigo_loc.Location = new System.Drawing.Point(18, 68);
+            this.txtSave_codigo_loc.Location = new System.Drawing.Point(60, 52);
             this.txtSave_codigo_loc.Name = "txtSave_codigo_loc";
-            this.txtSave_codigo_loc.Size = new System.Drawing.Size(73, 20);
+            this.txtSave_codigo_loc.Size = new System.Drawing.Size(47, 20);
             this.txtSave_codigo_loc.TabIndex = 7;
             // 
             // lblestado_ctr
             // 
             this.lblestado_ctr.AutoSize = true;
-            this.lblestado_ctr.Location = new System.Drawing.Point(207, 52);
+            this.lblestado_ctr.Location = new System.Drawing.Point(124, 239);
             this.lblestado_ctr.Name = "lblestado_ctr";
             this.lblestado_ctr.Size = new System.Drawing.Size(57, 13);
             this.lblestado_ctr.TabIndex = 6;
@@ -188,21 +188,21 @@
             // lblconsec_ctr
             // 
             this.lblconsec_ctr.AutoSize = true;
-            this.lblconsec_ctr.Location = new System.Drawing.Point(114, 52);
+            this.lblconsec_ctr.Location = new System.Drawing.Point(131, 55);
             this.lblconsec_ctr.Name = "lblconsec_ctr";
-            this.lblconsec_ctr.Size = new System.Drawing.Size(60, 13);
+            this.lblconsec_ctr.Size = new System.Drawing.Size(69, 13);
             this.lblconsec_ctr.TabIndex = 1;
-            this.lblconsec_ctr.Text = "consec_ctr";
+            this.lblconsec_ctr.Text = "Consecutivo:";
             // 
-            // AgregarDatos
+            // Frm_AgregarDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(360, 324);
             this.Controls.Add(this.gpbGuardar);
-            this.Name = "AgregarDatos";
-            this.Text = "AgregarDatos";
+            this.Name = "Frm_AgregarDatos";
+            this.Text = "Agregar Transaccion";
             this.gpbGuardar.ResumeLayout(false);
             this.gpbGuardar.PerformLayout();
             this.ResumeLayout(false);

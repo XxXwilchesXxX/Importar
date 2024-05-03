@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace Importar.VIEW
 {
-    public partial class AgregarDatos : Form
+    public partial class Frm_AgregarDatos : Form
     {
         private DataGridView Dgv_cuadriculaDedatos;
         private Label lblFilasImportadas; 
 
-        public AgregarDatos(DataGridView dgv, Label lblFilas)
+        public Frm_AgregarDatos(DataGridView dgv, Label lblFilas)
         {
             InitializeComponent();
             Dgv_cuadriculaDedatos = dgv;

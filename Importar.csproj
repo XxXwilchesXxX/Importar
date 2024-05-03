@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="DAL\ConexionSqlserver.cs" />
     <Compile Include="VIEW\EditaryEliminarDatos.cs" />
-    <Compile Include="DAL\GuardarDatos.cs" />
+    <Compile Include="DAL\GuardarDatos_DAL.cs" />
     <Compile Include="DAL\SubirDatosDB.cs" />
     <Compile Include="VIEW\AgregarDatos.cs">
       <SubType>Form</SubType>
@@ -59,11 +59,11 @@
     <Compile Include="VIEW\AgregarDatos.Designer.cs">
       <DependentUpon>AgregarDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\EditaryEliminar.cs">
+    <Compile Include="VIEW\editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\EditaryEliminar.Designer.cs">
-      <DependentUpon>EditaryEliminar.cs</DependentUpon>
+    <Compile Include="VIEW\editar.Designer.cs">
+      <DependentUpon>editar.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\importador.cs" />
     <Compile Include="VIEW\ProgramaDimportacion.cs">
@@ -78,8 +78,8 @@
     <EmbeddedResource Include="VIEW\AgregarDatos.resx">
       <DependentUpon>AgregarDatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\EditaryEliminar.resx">
-      <DependentUpon>EditaryEliminar.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\editar.resx">
+      <DependentUpon>editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\ProgramaDimportacion.resx">
       <DependentUpon>ProgramaDimportacion.cs</DependentUpon>

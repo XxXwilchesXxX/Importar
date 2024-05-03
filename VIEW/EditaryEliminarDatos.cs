@@ -13,7 +13,7 @@ namespace Importar.VIEW
             }
 
             // Crear una nueva instancia del formulario para editar y eliminar datos
-            EditaryEliminar form = new EditaryEliminar();
+            Frm_editar form = new Frm_editar();
 
             // Asignar valores a los textboxes en el formulario
             form.txtEdit_eliminar_codigo_loc.Text = filaSeleccionada.Cells["codigo_loc"].Value?.ToString();

@@ -1,6 +1,6 @@
 ﻿namespace Importar.VIEW
 {
-    partial class EditaryEliminar
+    partial class Frm_editar
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,6 @@
             this.lblEdit_Eliminar_codigo_trs = new System.Windows.Forms.Label();
             this.lblEdit_Eliminar_consec_ctr = new System.Windows.Forms.Label();
             this.lblEdit_Eliminar_codigo_loc = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.txtEdit_eliminar_estado_ctr = new System.Windows.Forms.TextBox();
             this.txtEdit_eliminar_codigo_trs = new System.Windows.Forms.TextBox();
@@ -57,7 +56,6 @@
             this.gpbEditaryeliminar.Controls.Add(this.lblEdit_Eliminar_codigo_trs);
             this.gpbEditaryeliminar.Controls.Add(this.lblEdit_Eliminar_consec_ctr);
             this.gpbEditaryeliminar.Controls.Add(this.lblEdit_Eliminar_codigo_loc);
-            this.gpbEditaryeliminar.Controls.Add(this.btnEliminar);
             this.gpbEditaryeliminar.Controls.Add(this.btnActualizar);
             this.gpbEditaryeliminar.Controls.Add(this.txtEdit_eliminar_estado_ctr);
             this.gpbEditaryeliminar.Controls.Add(this.txtEdit_eliminar_codigo_trs);
@@ -135,16 +133,6 @@
             this.lblEdit_Eliminar_codigo_loc.TabIndex = 9;
             this.lblEdit_Eliminar_codigo_loc.Text = "codigo_loc";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(201, 229);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 23);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnActualizar
             // 
             this.btnActualizar.Location = new System.Drawing.Point(319, 229);
@@ -204,14 +192,14 @@
             this.txtEdit_eliminar_codigo_loc.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_codigo_loc.TabIndex = 0;
             // 
-            // EditaryEliminar
+            // Frm_editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(443, 282);
             this.Controls.Add(this.gpbEditaryeliminar);
-            this.Name = "EditaryEliminar";
+            this.Name = "Frm_editar";
             this.Text = "EditaryEliminar";
             this.gpbEditaryeliminar.ResumeLayout(false);
             this.gpbEditaryeliminar.PerformLayout();
@@ -222,7 +210,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbEditaryeliminar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label lblEdit_Eliminar_codigo_loc;
         private System.Windows.Forms.Label lblEdit_Eliminar_estado_ctr;

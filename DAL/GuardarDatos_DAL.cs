@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Importar.DAL
 {
-    internal class GuardarDatos
+    internal class GuardarDatos_DAL
     {
 
         //Este método toma un DataGridView y siete valores para agregar como fila nueva.

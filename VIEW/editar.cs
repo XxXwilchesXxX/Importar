@@ -3,18 +3,18 @@ using System.Windows.Forms;
 
 namespace Importar.VIEW
 {
-    public partial class EditaryEliminar : Form
+    public partial class Frm_editar : Form
     {
         private DataGridView Dgv_cuadriculaDedatos; // DataGridView del formulario principal
         private DataGridViewRow selectedRow; // Fila seleccionada para editar
 
-        public EditaryEliminar()
+        public Frm_editar()
         {
         }
 
 
         // Constructor para recibir el DataGridView y la fila seleccionada
-        public EditaryEliminar(DataGridView dgv, DataGridViewRow row)
+        public Frm_editar(DataGridView dgv, DataGridViewRow row)
         {
             InitializeComponent();
             this.Dgv_cuadriculaDedatos = dgv;
@@ -45,17 +45,6 @@ namespace Importar.VIEW
             this.Close(); // Cerrar el formulario al finalizar
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("¿Está seguro de que desea eliminar esta fila?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                // Eliminar la fila del DataGridView
-                Dgv_cuadriculaDedatos.Rows.Remove(selectedRow);
-                MessageBox.Show("Fila eliminada con éxito.");
-                this.Close(); // Cerrar el formulario después de eliminar
-            }
 
-        }
     }
 }
