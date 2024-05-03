@@ -3,12 +3,12 @@ using System.Data.SqlClient;
 
 namespace Importar.DAL
 {
-    internal class ConexionSqlserver
+    internal class ConexionSqlserver_DAL
     {
         private readonly string connectionString = "Data Source=DESKTOP-LQHP5D2;Initial Catalog=excel;Integrated Security=True";
         private SqlConnection connection;
 
-        public ConexionSqlserver()
+        public ConexionSqlserver_DAL()
         {
             connection = new SqlConnection(connectionString);
         }

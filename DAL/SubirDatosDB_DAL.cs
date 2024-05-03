@@ -2,18 +2,17 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Importar.DAL
 {
-    internal class SubirDatosDB
+    internal class SubirDatosDB_DAL
     {
         private static int indiceInicio = 0;
         private SqlConnection connection;
 
-        public SubirDatosDB()
+        public SubirDatosDB_DAL()
         {
-            var conexion = new ConexionSqlserver();
+            var conexion = new ConexionSqlserver_DAL();
             connection = conexion.ObtenerConexion();
             AbrirConexion(); // Asegúrate de abrir la conexión al inicializar
         }

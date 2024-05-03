@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnDatonuevo = new System.Windows.Forms.Button();
             this.lblFilasImportadas = new System.Windows.Forms.Label();
             this.lblProcessing = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.gpbAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -53,8 +54,8 @@
             // gpbAgrupacion
             // 
             this.gpbAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.gpbAgrupacion.Controls.Add(this.btnEditar);
             this.gpbAgrupacion.Controls.Add(this.btnEliminar);
-            this.gpbAgrupacion.Controls.Add(this.btnActualizar);
             this.gpbAgrupacion.Controls.Add(this.btnDatonuevo);
             this.gpbAgrupacion.Controls.Add(this.lblFilasImportadas);
             this.gpbAgrupacion.Controls.Add(this.lblProcessing);
@@ -78,16 +79,6 @@
             this.btnEliminar.Text = "eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(522, 435);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(109, 23);
-            this.btnActualizar.TabIndex = 9;
-            this.btnActualizar.Text = "Actualizar ";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizaryeliminar_Click);
             // 
             // btnDatonuevo
             // 
@@ -151,7 +142,7 @@
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(146, 23);
             this.btnImportar.TabIndex = 2;
-            this.btnImportar.Text = "Cargar archivo CSV";
+            this.btnImportar.Text = "Importar archivo CSV";
             this.btnImportar.UseVisualStyleBackColor = false;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
@@ -161,12 +152,26 @@
             this.Dgv_cuadriculaDedatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_cuadriculaDedatos.Location = new System.Drawing.Point(6, 48);
             this.Dgv_cuadriculaDedatos.Name = "Dgv_cuadriculaDedatos";
+            this.Dgv_cuadriculaDedatos.RowHeadersVisible = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(755, 372);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(522, 435);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(109, 23);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // software
             // 
@@ -201,8 +206,8 @@
         private System.Windows.Forms.Label lblFilasImportadas;
         private System.ComponentModel.BackgroundWorker backgroundWorker4;
         private System.Windows.Forms.Button btnDatonuevo;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
 

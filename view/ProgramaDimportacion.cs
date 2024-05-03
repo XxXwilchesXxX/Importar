@@ -13,13 +13,15 @@ namespace Importar
     public partial class software : Form
     {
 
-        private ConexionSqlserver conexionSqlserver; // Asegúrate de tener esta declaración
+        private ConexionSqlserver_DAL conexionSqlserver; // Asegúrate de tener esta declaración
         private DataGridViewRow selectedRow;
 
         public software()
         {
             InitializeComponent();
-            conexionSqlserver = new ConexionSqlserver();
+            conexionSqlserver = new ConexionSqlserver_DAL();
+            // Aplicar configuración al DataGridView
+            importador_VIEW.ConfigurarDataGridView(Dgv_cuadriculaDedatos);
         }
 
 
@@ -27,20 +29,14 @@ namespace Importar
         //Funcion del boton de IMPORTAR
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            importador objetoDeImportacion = new importador();
-
+            importador_VIEW importador = new importador_VIEW();
             int numFilas;
-
-            DataTable dt = objetoDeImportacion.Importarcsv(out numFilas);
+            DataTable dt = importador.Importarcsv(out numFilas);
 
             if (dt != null)
             {
                 Dgv_cuadriculaDedatos.DataSource = dt;
-                lblFilasImportadas.Text = $"Filas importadas: {numFilas}";
-            }
-            else
-            {
-                lblFilasImportadas.Text = "No se importaron datos";
+                importador_VIEW.ConfigurarDataGridView(Dgv_cuadriculaDedatos); // Aplicar configuración después de importar
             }
         }
 
@@ -58,7 +54,7 @@ namespace Importar
 
                 worker.DoWork += (s, ev) =>
                 {
-                    SubirDatosDB subirDatosDB = new SubirDatosDB();
+                    SubirDatosDB_DAL subirDatosDB = new SubirDatosDB_DAL();
 
                     DataTable dtTransacciones = (DataTable)Dgv_cuadriculaDedatos.DataSource;
                     subirDatosDB.SubirDatos(dtTransacciones, numDatos, percent =>
@@ -104,9 +100,10 @@ namespace Importar
         }
 
 
-        //Funcion del boton de Actualizar y eliminar
-        private void btnActualizaryeliminar_Click(object sender, EventArgs e)
+        //Funcion del boton de editar
+        private void btnEditar_Click(object sender, EventArgs e)
         {
+
             // Crear el formulario y pasarle el DataGridView
             if (Dgv_cuadriculaDedatos.SelectedRows.Count > 0) // Asegurarse de que haya filas seleccionadas
             {
@@ -116,8 +113,9 @@ namespace Importar
             }
             else
             {
-                MessageBox.Show("Seleccione una fila para editar.");
+                MessageBox.Show("Seleccione una fila que desea editar.");
             }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -138,6 +136,7 @@ namespace Importar
             }
         }
 
+        
     }
 
 }

@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\ConexionSqlserver.cs" />
-    <Compile Include="VIEW\EditaryEliminarDatos.cs" />
+    <Compile Include="DAL\ConexionSqlserver_DAL.cs" />
+    <Compile Include="VIEW\Editar_VIEW.cs" />
     <Compile Include="DAL\GuardarDatos_DAL.cs" />
-    <Compile Include="DAL\SubirDatosDB.cs" />
+    <Compile Include="DAL\SubirDatosDB_DAL.cs" />
     <Compile Include="VIEW\AgregarDatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +65,7 @@
     <Compile Include="VIEW\editar.Designer.cs">
       <DependentUpon>editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\importador.cs" />
+    <Compile Include="VIEW\importador_VIEW.cs" />
     <Compile Include="VIEW\ProgramaDimportacion.cs">
       <SubType>Form</SubType>
     </Compile>

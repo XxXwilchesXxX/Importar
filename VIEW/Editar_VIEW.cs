@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Importar.VIEW
 {
-    internal class EditaryEliminarDatos
+    internal class Editar_VIEW
     {
         internal void AbrirFormularioParaEdicion(DataGridViewRow filaSeleccionada)
         {

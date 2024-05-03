@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace Importar.VIEW
 {
-    internal class importador
+    internal class importador_VIEW
     {
         public DataTable Importarcsv(out int numFilas)
         {
-            numFilas = 0; 
+            numFilas = 0;
 
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -34,7 +34,7 @@ namespace Importar.VIEW
                         }
                     }
 
-                    numFilas = dt.Rows.Count; 
+                    numFilas = dt.Rows.Count;
                     return dt;
                 }
                 catch (Exception ex)
@@ -46,9 +46,28 @@ namespace Importar.VIEW
             return null;
         }
 
-        internal DataTable Importarcsv()
+        // Método para hacer que un DataGridView sea de solo lectura
+        public static void ConfigurarDataGridView(DataGridView dgv)
         {
-            throw new NotImplementedException();
+            if (dgv != null)
+            {
+                dgv.ReadOnly = true; // Para que no se pueda editar
+                dgv.AllowUserToAddRows = false; // Para eliminar la fila de agregado
+                dgv.AllowUserToDeleteRows = false; // No permitir eliminación manual
+                dgv.AllowUserToOrderColumns = true; // Permitir reordenar columnas
+
+                // Agregar evento para seleccionar toda la fila con doble clic
+                dgv.CellDoubleClick += (sender, e) =>
+                {
+                    if (e.RowIndex >= 0) // Asegurarse de que no sea el encabezado
+                    {
+                        dgv.Rows[e.RowIndex].Selected = true; // Seleccionar la fila completa
+                    }
+                };
+            }
+
+
         }
     }
 }
+
