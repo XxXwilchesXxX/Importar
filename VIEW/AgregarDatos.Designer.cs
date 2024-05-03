@@ -68,14 +68,14 @@
             this.gpbGuardar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.gpbGuardar.Location = new System.Drawing.Point(12, 12);
             this.gpbGuardar.Name = "gpbGuardar";
-            this.gpbGuardar.Size = new System.Drawing.Size(339, 300);
+            this.gpbGuardar.Size = new System.Drawing.Size(339, 220);
             this.gpbGuardar.TabIndex = 0;
             this.gpbGuardar.TabStop = false;
             // 
             // lblcodigo_loc
             // 
             this.lblcodigo_loc.AutoSize = true;
-            this.lblcodigo_loc.Location = new System.Drawing.Point(18, 52);
+            this.lblcodigo_loc.Location = new System.Drawing.Point(6, 31);
             this.lblcodigo_loc.Name = "lblcodigo_loc";
             this.lblcodigo_loc.Size = new System.Drawing.Size(36, 13);
             this.lblcodigo_loc.TabIndex = 15;
@@ -83,7 +83,7 @@
             // 
             // btnGuardarDatos
             // 
-            this.btnGuardarDatos.Location = new System.Drawing.Point(236, 271);
+            this.btnGuardarDatos.Location = new System.Drawing.Point(224, 181);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
             this.btnGuardarDatos.Size = new System.Drawing.Size(97, 23);
             this.btnGuardarDatos.TabIndex = 14;
@@ -93,49 +93,49 @@
             // 
             // txtSave_estado_ctr
             // 
-            this.txtSave_estado_ctr.Location = new System.Drawing.Point(127, 255);
+            this.txtSave_estado_ctr.Location = new System.Drawing.Point(72, 145);
             this.txtSave_estado_ctr.Name = "txtSave_estado_ctr";
             this.txtSave_estado_ctr.Size = new System.Drawing.Size(73, 20);
             this.txtSave_estado_ctr.TabIndex = 13;
             // 
             // txtSave_fecha_ctr
             // 
-            this.txtSave_fecha_ctr.Location = new System.Drawing.Point(117, 190);
+            this.txtSave_fecha_ctr.Location = new System.Drawing.Point(224, 109);
             this.txtSave_fecha_ctr.Name = "txtSave_fecha_ctr";
             this.txtSave_fecha_ctr.Size = new System.Drawing.Size(73, 20);
             this.txtSave_fecha_ctr.TabIndex = 12;
             // 
             // txtSave_valor_ctr
             // 
-            this.txtSave_valor_ctr.Location = new System.Drawing.Point(206, 94);
+            this.txtSave_valor_ctr.Location = new System.Drawing.Point(206, 66);
             this.txtSave_valor_ctr.Name = "txtSave_valor_ctr";
             this.txtSave_valor_ctr.Size = new System.Drawing.Size(73, 20);
             this.txtSave_valor_ctr.TabIndex = 11;
             // 
             // txtSave_id_emp
             // 
-            this.txtSave_id_emp.Location = new System.Drawing.Point(18, 130);
+            this.txtSave_id_emp.Location = new System.Drawing.Point(56, 69);
             this.txtSave_id_emp.Name = "txtSave_id_emp";
             this.txtSave_id_emp.Size = new System.Drawing.Size(73, 20);
             this.txtSave_id_emp.TabIndex = 10;
             // 
             // txtSave_codigo_trs
             // 
-            this.txtSave_codigo_trs.Location = new System.Drawing.Point(18, 190);
+            this.txtSave_codigo_trs.Location = new System.Drawing.Point(71, 106);
             this.txtSave_codigo_trs.Name = "txtSave_codigo_trs";
             this.txtSave_codigo_trs.Size = new System.Drawing.Size(73, 20);
             this.txtSave_codigo_trs.TabIndex = 9;
             // 
             // txtSave_consec_ctr
             // 
-            this.txtSave_consec_ctr.Location = new System.Drawing.Point(206, 52);
+            this.txtSave_consec_ctr.Location = new System.Drawing.Point(206, 31);
             this.txtSave_consec_ctr.Name = "txtSave_consec_ctr";
             this.txtSave_consec_ctr.Size = new System.Drawing.Size(110, 20);
             this.txtSave_consec_ctr.TabIndex = 8;
             // 
             // txtSave_codigo_loc
             // 
-            this.txtSave_codigo_loc.Location = new System.Drawing.Point(60, 52);
+            this.txtSave_codigo_loc.Location = new System.Drawing.Point(48, 31);
             this.txtSave_codigo_loc.Name = "txtSave_codigo_loc";
             this.txtSave_codigo_loc.Size = new System.Drawing.Size(47, 20);
             this.txtSave_codigo_loc.TabIndex = 7;
@@ -143,7 +143,7 @@
             // lblestado_ctr
             // 
             this.lblestado_ctr.AutoSize = true;
-            this.lblestado_ctr.Location = new System.Drawing.Point(124, 239);
+            this.lblestado_ctr.Location = new System.Drawing.Point(6, 145);
             this.lblestado_ctr.Name = "lblestado_ctr";
             this.lblestado_ctr.Size = new System.Drawing.Size(60, 13);
             this.lblestado_ctr.TabIndex = 6;
@@ -152,7 +152,7 @@
             // lblfecha_ctr
             // 
             this.lblfecha_ctr.AutoSize = true;
-            this.lblfecha_ctr.Location = new System.Drawing.Point(114, 174);
+            this.lblfecha_ctr.Location = new System.Drawing.Point(163, 109);
             this.lblfecha_ctr.Name = "lblfecha_ctr";
             this.lblfecha_ctr.Size = new System.Drawing.Size(55, 13);
             this.lblfecha_ctr.TabIndex = 5;
@@ -161,7 +161,7 @@
             // lblvalor_ctr
             // 
             this.lblvalor_ctr.AutoSize = true;
-            this.lblvalor_ctr.Location = new System.Drawing.Point(133, 97);
+            this.lblvalor_ctr.Location = new System.Drawing.Point(149, 72);
             this.lblvalor_ctr.Name = "lblvalor_ctr";
             this.lblvalor_ctr.Size = new System.Drawing.Size(51, 13);
             this.lblvalor_ctr.TabIndex = 4;
@@ -170,7 +170,7 @@
             // lblid_emp
             // 
             this.lblid_emp.AutoSize = true;
-            this.lblid_emp.Location = new System.Drawing.Point(18, 114);
+            this.lblid_emp.Location = new System.Drawing.Point(6, 69);
             this.lblid_emp.Name = "lblid_emp";
             this.lblid_emp.Size = new System.Drawing.Size(44, 13);
             this.lblid_emp.TabIndex = 3;
@@ -179,7 +179,7 @@
             // lblcodigo_trs
             // 
             this.lblcodigo_trs.AutoSize = true;
-            this.lblcodigo_trs.Location = new System.Drawing.Point(18, 174);
+            this.lblcodigo_trs.Location = new System.Drawing.Point(6, 109);
             this.lblcodigo_trs.Name = "lblcodigo_trs";
             this.lblcodigo_trs.Size = new System.Drawing.Size(59, 13);
             this.lblcodigo_trs.TabIndex = 2;
@@ -188,7 +188,7 @@
             // lblconsec_ctr
             // 
             this.lblconsec_ctr.AutoSize = true;
-            this.lblconsec_ctr.Location = new System.Drawing.Point(131, 55);
+            this.lblconsec_ctr.Location = new System.Drawing.Point(131, 31);
             this.lblconsec_ctr.Name = "lblconsec_ctr";
             this.lblconsec_ctr.Size = new System.Drawing.Size(69, 13);
             this.lblconsec_ctr.TabIndex = 1;
@@ -199,7 +199,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(360, 324);
+            this.ClientSize = new System.Drawing.Size(360, 244);
             this.Controls.Add(this.gpbGuardar);
             this.Name = "Frm_AgregarDatos";
             this.Text = "Agregar Transaccion";

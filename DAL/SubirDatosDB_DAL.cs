@@ -24,12 +24,6 @@ namespace Importar.DAL
                 connection.Open();
             }
         }
-
-        //private void GuardarIndice()
-        //{
-        //    File.WriteAllText("indiceInicio.txt", indiceInicio.ToString());
-        //}
-
         private bool DatoYaExiste(DataRow row)
         {
             //Abrir conexion con DB
@@ -76,7 +70,6 @@ namespace Importar.DAL
                 }
 
                 indiceInicio += datosASubir;
-                //GuardarIndice();
 
                 MessageBox.Show($"Se subieron {datosASubir} datos a la base de datos.");
             }

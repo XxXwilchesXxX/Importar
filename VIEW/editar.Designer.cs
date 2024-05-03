@@ -73,7 +73,7 @@
             // lblEdit_Eliminar_estado_ctr
             // 
             this.lblEdit_Eliminar_estado_ctr.AutoSize = true;
-            this.lblEdit_Eliminar_estado_ctr.Location = new System.Drawing.Point(298, 16);
+            this.lblEdit_Eliminar_estado_ctr.Location = new System.Drawing.Point(9, 168);
             this.lblEdit_Eliminar_estado_ctr.Name = "lblEdit_Eliminar_estado_ctr";
             this.lblEdit_Eliminar_estado_ctr.Size = new System.Drawing.Size(57, 13);
             this.lblEdit_Eliminar_estado_ctr.TabIndex = 15;
@@ -82,7 +82,7 @@
             // lblEdit_Eliminar_fecha_ctr
             // 
             this.lblEdit_Eliminar_fecha_ctr.AutoSize = true;
-            this.lblEdit_Eliminar_fecha_ctr.Location = new System.Drawing.Point(157, 140);
+            this.lblEdit_Eliminar_fecha_ctr.Location = new System.Drawing.Point(234, 126);
             this.lblEdit_Eliminar_fecha_ctr.Name = "lblEdit_Eliminar_fecha_ctr";
             this.lblEdit_Eliminar_fecha_ctr.Size = new System.Drawing.Size(52, 13);
             this.lblEdit_Eliminar_fecha_ctr.TabIndex = 14;
@@ -91,7 +91,7 @@
             // lblEdit_Eliminar_valor_ctr
             // 
             this.lblEdit_Eliminar_valor_ctr.AutoSize = true;
-            this.lblEdit_Eliminar_valor_ctr.Location = new System.Drawing.Point(157, 76);
+            this.lblEdit_Eliminar_valor_ctr.Location = new System.Drawing.Point(226, 79);
             this.lblEdit_Eliminar_valor_ctr.Name = "lblEdit_Eliminar_valor_ctr";
             this.lblEdit_Eliminar_valor_ctr.Size = new System.Drawing.Size(48, 13);
             this.lblEdit_Eliminar_valor_ctr.TabIndex = 13;
@@ -100,7 +100,7 @@
             // lblEdit_Eliminar_id_emp
             // 
             this.lblEdit_Eliminar_id_emp.AutoSize = true;
-            this.lblEdit_Eliminar_id_emp.Location = new System.Drawing.Point(157, 16);
+            this.lblEdit_Eliminar_id_emp.Location = new System.Drawing.Point(6, 82);
             this.lblEdit_Eliminar_id_emp.Name = "lblEdit_Eliminar_id_emp";
             this.lblEdit_Eliminar_id_emp.Size = new System.Drawing.Size(41, 13);
             this.lblEdit_Eliminar_id_emp.TabIndex = 12;
@@ -109,7 +109,7 @@
             // lblEdit_Eliminar_codigo_trs
             // 
             this.lblEdit_Eliminar_codigo_trs.AutoSize = true;
-            this.lblEdit_Eliminar_codigo_trs.Location = new System.Drawing.Point(6, 140);
+            this.lblEdit_Eliminar_codigo_trs.Location = new System.Drawing.Point(6, 123);
             this.lblEdit_Eliminar_codigo_trs.Name = "lblEdit_Eliminar_codigo_trs";
             this.lblEdit_Eliminar_codigo_trs.Size = new System.Drawing.Size(56, 13);
             this.lblEdit_Eliminar_codigo_trs.TabIndex = 11;
@@ -118,20 +118,20 @@
             // lblEdit_Eliminar_consec_ctr
             // 
             this.lblEdit_Eliminar_consec_ctr.AutoSize = true;
-            this.lblEdit_Eliminar_consec_ctr.Location = new System.Drawing.Point(6, 76);
+            this.lblEdit_Eliminar_consec_ctr.Location = new System.Drawing.Point(186, 32);
             this.lblEdit_Eliminar_consec_ctr.Name = "lblEdit_Eliminar_consec_ctr";
-            this.lblEdit_Eliminar_consec_ctr.Size = new System.Drawing.Size(60, 13);
+            this.lblEdit_Eliminar_consec_ctr.Size = new System.Drawing.Size(69, 13);
             this.lblEdit_Eliminar_consec_ctr.TabIndex = 10;
-            this.lblEdit_Eliminar_consec_ctr.Text = "consec_ctr";
+            this.lblEdit_Eliminar_consec_ctr.Text = "Consecutivo:";
             // 
             // lblEdit_Eliminar_codigo_loc
             // 
             this.lblEdit_Eliminar_codigo_loc.AutoSize = true;
-            this.lblEdit_Eliminar_codigo_loc.Location = new System.Drawing.Point(6, 16);
+            this.lblEdit_Eliminar_codigo_loc.Location = new System.Drawing.Point(7, 35);
             this.lblEdit_Eliminar_codigo_loc.Name = "lblEdit_Eliminar_codigo_loc";
-            this.lblEdit_Eliminar_codigo_loc.Size = new System.Drawing.Size(59, 13);
+            this.lblEdit_Eliminar_codigo_loc.Size = new System.Drawing.Size(36, 13);
             this.lblEdit_Eliminar_codigo_loc.TabIndex = 9;
-            this.lblEdit_Eliminar_codigo_loc.Text = "codigo_loc";
+            this.lblEdit_Eliminar_codigo_loc.Text = "Local:";
             // 
             // btnActualizar
             // 
@@ -145,51 +145,51 @@
             // 
             // txtEdit_eliminar_estado_ctr
             // 
-            this.txtEdit_eliminar_estado_ctr.Location = new System.Drawing.Point(301, 32);
+            this.txtEdit_eliminar_estado_ctr.Location = new System.Drawing.Point(72, 165);
             this.txtEdit_eliminar_estado_ctr.Name = "txtEdit_eliminar_estado_ctr";
             this.txtEdit_eliminar_estado_ctr.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_estado_ctr.TabIndex = 6;
             // 
             // txtEdit_eliminar_codigo_trs
             // 
-            this.txtEdit_eliminar_codigo_trs.Location = new System.Drawing.Point(9, 156);
+            this.txtEdit_eliminar_codigo_trs.Location = new System.Drawing.Point(68, 123);
             this.txtEdit_eliminar_codigo_trs.Name = "txtEdit_eliminar_codigo_trs";
             this.txtEdit_eliminar_codigo_trs.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_codigo_trs.TabIndex = 5;
             // 
             // txtEdit_eliminar_valor_ctr
             // 
-            this.txtEdit_eliminar_valor_ctr.Location = new System.Drawing.Point(160, 92);
+            this.txtEdit_eliminar_valor_ctr.Location = new System.Drawing.Point(280, 75);
             this.txtEdit_eliminar_valor_ctr.Name = "txtEdit_eliminar_valor_ctr";
             this.txtEdit_eliminar_valor_ctr.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_valor_ctr.TabIndex = 4;
             // 
             // txtEdit_eliminar_fecha_ctr
             // 
-            this.txtEdit_eliminar_fecha_ctr.Location = new System.Drawing.Point(160, 156);
+            this.txtEdit_eliminar_fecha_ctr.Location = new System.Drawing.Point(292, 119);
             this.txtEdit_eliminar_fecha_ctr.Name = "txtEdit_eliminar_fecha_ctr";
             this.txtEdit_eliminar_fecha_ctr.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_fecha_ctr.TabIndex = 3;
             // 
             // txtEdit_eliminar_id_emp
             // 
-            this.txtEdit_eliminar_id_emp.Location = new System.Drawing.Point(160, 32);
+            this.txtEdit_eliminar_id_emp.Location = new System.Drawing.Point(53, 79);
             this.txtEdit_eliminar_id_emp.Name = "txtEdit_eliminar_id_emp";
-            this.txtEdit_eliminar_id_emp.Size = new System.Drawing.Size(100, 20);
+            this.txtEdit_eliminar_id_emp.Size = new System.Drawing.Size(76, 20);
             this.txtEdit_eliminar_id_emp.TabIndex = 2;
             // 
             // txtEdit_eliminar_consec_ctr
             // 
-            this.txtEdit_eliminar_consec_ctr.Location = new System.Drawing.Point(9, 92);
+            this.txtEdit_eliminar_consec_ctr.Location = new System.Drawing.Point(261, 29);
             this.txtEdit_eliminar_consec_ctr.Name = "txtEdit_eliminar_consec_ctr";
             this.txtEdit_eliminar_consec_ctr.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_consec_ctr.TabIndex = 1;
             // 
             // txtEdit_eliminar_codigo_loc
             // 
-            this.txtEdit_eliminar_codigo_loc.Location = new System.Drawing.Point(9, 32);
+            this.txtEdit_eliminar_codigo_loc.Location = new System.Drawing.Point(72, 32);
             this.txtEdit_eliminar_codigo_loc.Name = "txtEdit_eliminar_codigo_loc";
-            this.txtEdit_eliminar_codigo_loc.Size = new System.Drawing.Size(100, 20);
+            this.txtEdit_eliminar_codigo_loc.Size = new System.Drawing.Size(57, 20);
             this.txtEdit_eliminar_codigo_loc.TabIndex = 0;
             // 
             // Frm_editar
