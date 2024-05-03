@@ -104,5 +104,10 @@ namespace Importar.DAL
                 command.ExecuteNonQuery();
             }
         }
+
+        internal void SubirDatos(DataGridView dgv_cuadriculaDedatos, int numDatos, Action<int> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -107,7 +107,7 @@
             // 
             // txtSave_valor_ctr
             // 
-            this.txtSave_valor_ctr.Location = new System.Drawing.Point(117, 130);
+            this.txtSave_valor_ctr.Location = new System.Drawing.Point(206, 94);
             this.txtSave_valor_ctr.Name = "txtSave_valor_ctr";
             this.txtSave_valor_ctr.Size = new System.Drawing.Size(73, 20);
             this.txtSave_valor_ctr.TabIndex = 11;
@@ -145,45 +145,45 @@
             this.lblestado_ctr.AutoSize = true;
             this.lblestado_ctr.Location = new System.Drawing.Point(124, 239);
             this.lblestado_ctr.Name = "lblestado_ctr";
-            this.lblestado_ctr.Size = new System.Drawing.Size(57, 13);
+            this.lblestado_ctr.Size = new System.Drawing.Size(60, 13);
             this.lblestado_ctr.TabIndex = 6;
-            this.lblestado_ctr.Text = "estado_ctr";
+            this.lblestado_ctr.Text = "estado_ctr:";
             // 
             // lblfecha_ctr
             // 
             this.lblfecha_ctr.AutoSize = true;
             this.lblfecha_ctr.Location = new System.Drawing.Point(114, 174);
             this.lblfecha_ctr.Name = "lblfecha_ctr";
-            this.lblfecha_ctr.Size = new System.Drawing.Size(52, 13);
+            this.lblfecha_ctr.Size = new System.Drawing.Size(55, 13);
             this.lblfecha_ctr.TabIndex = 5;
-            this.lblfecha_ctr.Text = "fecha_ctr";
+            this.lblfecha_ctr.Text = "fecha_ctr:";
             // 
             // lblvalor_ctr
             // 
             this.lblvalor_ctr.AutoSize = true;
-            this.lblvalor_ctr.Location = new System.Drawing.Point(114, 114);
+            this.lblvalor_ctr.Location = new System.Drawing.Point(133, 97);
             this.lblvalor_ctr.Name = "lblvalor_ctr";
-            this.lblvalor_ctr.Size = new System.Drawing.Size(48, 13);
+            this.lblvalor_ctr.Size = new System.Drawing.Size(51, 13);
             this.lblvalor_ctr.TabIndex = 4;
-            this.lblvalor_ctr.Text = "valor_ctr";
+            this.lblvalor_ctr.Text = "valor_ctr:";
             // 
             // lblid_emp
             // 
             this.lblid_emp.AutoSize = true;
             this.lblid_emp.Location = new System.Drawing.Point(18, 114);
             this.lblid_emp.Name = "lblid_emp";
-            this.lblid_emp.Size = new System.Drawing.Size(41, 13);
+            this.lblid_emp.Size = new System.Drawing.Size(44, 13);
             this.lblid_emp.TabIndex = 3;
-            this.lblid_emp.Text = "id_emp";
+            this.lblid_emp.Text = "id_emp:";
             // 
             // lblcodigo_trs
             // 
             this.lblcodigo_trs.AutoSize = true;
             this.lblcodigo_trs.Location = new System.Drawing.Point(18, 174);
             this.lblcodigo_trs.Name = "lblcodigo_trs";
-            this.lblcodigo_trs.Size = new System.Drawing.Size(56, 13);
+            this.lblcodigo_trs.Size = new System.Drawing.Size(59, 13);
             this.lblcodigo_trs.TabIndex = 2;
-            this.lblcodigo_trs.Text = "codigo_trs";
+            this.lblcodigo_trs.Text = "codigo_trs:";
             // 
             // lblconsec_ctr
             // 

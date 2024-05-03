@@ -3,11 +3,11 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Importar.VIEW
+namespace Importar
 {
     internal class importador_VIEW
     {
-        public DataTable Importarcsv(out int numFilas)
+        public DataTable ImportarCsv(out int numFilas)
         {
             numFilas = 0;
 
@@ -17,57 +17,78 @@ namespace Importar.VIEW
                 Title = "Seleccionar archivo CSV"
             };
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+                return null;
+
+            try
             {
-                try
-                {
-                    DataTable dt = new DataTable();
-                    using (StreamReader reader = new StreamReader(openFileDialog.FileName))
-                    {
-                        string[] headers = reader.ReadLine().Split(';');
-                        foreach (string header in headers) dt.Columns.Add(header);
-
-                        while (!reader.EndOfStream)
-                        {
-                            string[] rows = reader.ReadLine().Split(';');
-                            dt.Rows.Add(rows);
-                        }
-                    }
-
-                    numFilas = dt.Rows.Count;
-                    return dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al leer el archivo: " + ex.Message);
-                }
+                DataTable dt = LeerCsv(openFileDialog.FileName, ref numFilas);
+                return dt;
             }
-
-            return null;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al leer el archivo: {ex.Message}");
+                return null;
+            }
         }
 
-        // Método para hacer que un DataGridView sea de solo lectura
-        public static void ConfigurarDataGridView(DataGridView dgv)
+        private DataTable LeerCsv(string filePath, ref int numFilas)
         {
-            if (dgv != null)
+            DataTable dt = new DataTable();
+            using (StreamReader reader = new StreamReader(filePath))
             {
-                dgv.ReadOnly = true; // Para que no se pueda editar
-                dgv.AllowUserToAddRows = false; // Para eliminar la fila de agregado
-                dgv.AllowUserToDeleteRows = false; // No permitir eliminación manual
-                dgv.AllowUserToOrderColumns = true; // Permitir reordenar columnas
-
-                // Agregar evento para seleccionar toda la fila con doble clic
-                dgv.CellDoubleClick += (sender, e) =>
+                string[] headers = reader.ReadLine().Split(';');
+                foreach (string header in headers)
                 {
-                    if (e.RowIndex >= 0) // Asegurarse de que no sea el encabezado
-                    {
-                        dgv.Rows[e.RowIndex].Selected = true; // Seleccionar la fila completa
-                    }
-                };
+                    dt.Columns.Add(header);
+                }
+
+                while (!reader.EndOfStream)
+                {
+                    string[] rows = reader.ReadLine().Split(';');
+                    dt.Rows.Add(rows);
+                }
             }
 
+            numFilas = dt.Rows.Count;
+            return dt;
+        }
 
+        public static void ConfigurarDataGridView(DataGridView dgv, Label lblFilasImportadas)
+        {
+            if (dgv == null || lblFilasImportadas == null)
+                throw new ArgumentNullException("El DataGridView o el Label es nulo.");
+
+            dgv.ReadOnly = true;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToOrderColumns = true;
+
+            dgv.RowsAdded += (sender, e) => ActualizarLabel(dgv, lblFilasImportadas);
+            dgv.RowsRemoved += (sender, e) => ActualizarLabel(dgv, lblFilasImportadas);
+
+            dgv.CellDoubleClick += (sender, e) =>
+            {
+                if (e.RowIndex >= 0)
+                {
+                    dgv.Rows[e.RowIndex].Selected = true;
+                }
+            };
+        }
+
+        private static void ActualizarLabel(DataGridView dgv, Label lblFilasImportadas)
+        {
+            if (dgv == null || lblFilasImportadas == null) return;
+
+            int numFilas = dgv.Rows.Count;
+
+            // Ajustar para evitar fila de inserción no deseada
+            if (dgv.AllowUserToAddRows)
+            {
+                numFilas--;
+            }
+
+            lblFilasImportadas.Text = $"Filas importadas: {numFilas}";
         }
     }
 }
-

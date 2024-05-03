@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDatonuevo = new System.Windows.Forms.Button();
             this.lblFilasImportadas = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.gpbAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -69,6 +69,16 @@
             this.gpbAgrupacion.Size = new System.Drawing.Size(769, 466);
             this.gpbAgrupacion.TabIndex = 0;
             this.gpbAgrupacion.TabStop = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(522, 435);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(109, 23);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -138,7 +148,7 @@
             // 
             this.btnImportar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnImportar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImportar.Location = new System.Drawing.Point(6, 19);
+            this.btnImportar.Location = new System.Drawing.Point(0, 18);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(146, 23);
             this.btnImportar.TabIndex = 2;
@@ -153,25 +163,15 @@
             this.Dgv_cuadriculaDedatos.Location = new System.Drawing.Point(6, 48);
             this.Dgv_cuadriculaDedatos.Name = "Dgv_cuadriculaDedatos";
             this.Dgv_cuadriculaDedatos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(755, 372);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(522, 435);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(109, 23);
-            this.btnEditar.TabIndex = 11;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // software
             // 
