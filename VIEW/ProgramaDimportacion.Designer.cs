@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -160,13 +160,13 @@
             // 
             this.Dgv_cuadriculaDedatos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.Dgv_cuadriculaDedatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_cuadriculaDedatos.Location = new System.Drawing.Point(21, 68);
+            this.Dgv_cuadriculaDedatos.Location = new System.Drawing.Point(21, 79);
             this.Dgv_cuadriculaDedatos.Name = "Dgv_cuadriculaDedatos";
             this.Dgv_cuadriculaDedatos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(723, 352);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(723, 331);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
             // errorProvider1
