@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -140,7 +140,7 @@
             this.btnSubirDB.Name = "btnSubirDB";
             this.btnSubirDB.Size = new System.Drawing.Size(146, 23);
             this.btnSubirDB.TabIndex = 4;
-            this.btnSubirDB.Text = "Subir a la DB ";
+            this.btnSubirDB.Text = "Subir a la base de datos";
             this.btnSubirDB.UseVisualStyleBackColor = false;
             this.btnSubirDB.Click += new System.EventHandler(this.btnSubirDB_Click);
             // 
@@ -148,7 +148,7 @@
             // 
             this.btnImportar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnImportar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImportar.Location = new System.Drawing.Point(0, 18);
+            this.btnImportar.Location = new System.Drawing.Point(6, 19);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(146, 23);
             this.btnImportar.TabIndex = 2;
@@ -163,9 +163,9 @@
             this.Dgv_cuadriculaDedatos.Location = new System.Drawing.Point(21, 68);
             this.Dgv_cuadriculaDedatos.Name = "Dgv_cuadriculaDedatos";
             this.Dgv_cuadriculaDedatos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(723, 352);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
