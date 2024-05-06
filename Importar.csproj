@@ -49,9 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\eliminarFila_BLL.cs" />
     <Compile Include="DAL\ConexionSqlserver_DAL.cs" />
+    <Compile Include="BLL\Importar_BLL.cs" />
+    <Compile Include="ENT\Entities.cs" />
     <Compile Include="VIEW\Editar_VIEW.cs" />
-    <Compile Include="DAL\GuardarDatos_DAL.cs" />
+    <Compile Include="BLL\GuardarDatos_BLL.cs" />
     <Compile Include="DAL\SubirDatosDB_DAL.cs" />
     <Compile Include="VIEW\AgregarDatos.cs">
       <SubType>Form</SubType>
@@ -65,7 +68,7 @@
     <Compile Include="VIEW\editar.Designer.cs">
       <DependentUpon>editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\importador_VIEW.cs" />
+    <Compile Include="VIEW\importar_VIEW.cs" />
     <Compile Include="VIEW\ProgramaDimportacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -107,8 +111,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="BLL\" />
+    <None Include="Resources\ext_csv_filetype_icon_176252.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_document_file_icon_123491.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-trash-4341321_120557.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485557-add-create-new-more-plus_81188.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_78348.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_software_update_22485.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,7 +16,7 @@ namespace Importar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new software());
+            Application.Run(new Frm_software());
         }
     }
 }

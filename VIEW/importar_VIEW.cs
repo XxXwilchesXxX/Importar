@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Importar
 {
-    internal class importador_VIEW
+    internal class importar_VIEW
     {
         public DataTable ImportarCsv(out int numFilas)
         {

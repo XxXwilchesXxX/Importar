@@ -68,7 +68,7 @@
             this.gpbGuardar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.gpbGuardar.Location = new System.Drawing.Point(12, 12);
             this.gpbGuardar.Name = "gpbGuardar";
-            this.gpbGuardar.Size = new System.Drawing.Size(339, 220);
+            this.gpbGuardar.Size = new System.Drawing.Size(336, 220);
             this.gpbGuardar.TabIndex = 0;
             this.gpbGuardar.TabStop = false;
             // 
@@ -83,17 +83,22 @@
             // 
             // btnGuardarDatos
             // 
-            this.btnGuardarDatos.Location = new System.Drawing.Point(224, 181);
+            this.btnGuardarDatos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarDatos.Image = global::Importar.Properties.Resources._1486485557_add_create_new_more_plus_81188;
+            this.btnGuardarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarDatos.Location = new System.Drawing.Point(236, 176);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
-            this.btnGuardarDatos.Size = new System.Drawing.Size(97, 23);
+            this.btnGuardarDatos.Size = new System.Drawing.Size(97, 38);
             this.btnGuardarDatos.TabIndex = 14;
-            this.btnGuardarDatos.Text = "Guardar datos";
-            this.btnGuardarDatos.UseVisualStyleBackColor = true;
+            this.btnGuardarDatos.Text = "Guardar ";
+            this.btnGuardarDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarDatos.UseVisualStyleBackColor = false;
             this.btnGuardarDatos.Click += new System.EventHandler(this.btnGuardarDatos_Click);
             // 
             // txtSave_estado_ctr
             // 
-            this.txtSave_estado_ctr.Location = new System.Drawing.Point(72, 145);
+            this.txtSave_estado_ctr.Location = new System.Drawing.Point(55, 145);
             this.txtSave_estado_ctr.Name = "txtSave_estado_ctr";
             this.txtSave_estado_ctr.Size = new System.Drawing.Size(73, 20);
             this.txtSave_estado_ctr.TabIndex = 13;
@@ -114,14 +119,14 @@
             // 
             // txtSave_id_emp
             // 
-            this.txtSave_id_emp.Location = new System.Drawing.Point(56, 69);
+            this.txtSave_id_emp.Location = new System.Drawing.Point(69, 69);
             this.txtSave_id_emp.Name = "txtSave_id_emp";
             this.txtSave_id_emp.Size = new System.Drawing.Size(73, 20);
             this.txtSave_id_emp.TabIndex = 10;
             // 
             // txtSave_codigo_trs
             // 
-            this.txtSave_codigo_trs.Location = new System.Drawing.Point(71, 106);
+            this.txtSave_codigo_trs.Location = new System.Drawing.Point(81, 106);
             this.txtSave_codigo_trs.Name = "txtSave_codigo_trs";
             this.txtSave_codigo_trs.Size = new System.Drawing.Size(73, 20);
             this.txtSave_codigo_trs.TabIndex = 9;
@@ -143,47 +148,47 @@
             // lblestado_ctr
             // 
             this.lblestado_ctr.AutoSize = true;
-            this.lblestado_ctr.Location = new System.Drawing.Point(6, 145);
+            this.lblestado_ctr.Location = new System.Drawing.Point(6, 148);
             this.lblestado_ctr.Name = "lblestado_ctr";
-            this.lblestado_ctr.Size = new System.Drawing.Size(60, 13);
+            this.lblestado_ctr.Size = new System.Drawing.Size(43, 13);
             this.lblestado_ctr.TabIndex = 6;
-            this.lblestado_ctr.Text = "estado_ctr:";
+            this.lblestado_ctr.Text = "Estado:";
             // 
             // lblfecha_ctr
             // 
             this.lblfecha_ctr.AutoSize = true;
-            this.lblfecha_ctr.Location = new System.Drawing.Point(163, 109);
+            this.lblfecha_ctr.Location = new System.Drawing.Point(178, 113);
             this.lblfecha_ctr.Name = "lblfecha_ctr";
-            this.lblfecha_ctr.Size = new System.Drawing.Size(55, 13);
+            this.lblfecha_ctr.Size = new System.Drawing.Size(40, 13);
             this.lblfecha_ctr.TabIndex = 5;
-            this.lblfecha_ctr.Text = "fecha_ctr:";
+            this.lblfecha_ctr.Text = "Fecha:";
             // 
             // lblvalor_ctr
             // 
             this.lblvalor_ctr.AutoSize = true;
-            this.lblvalor_ctr.Location = new System.Drawing.Point(149, 72);
+            this.lblvalor_ctr.Location = new System.Drawing.Point(163, 72);
             this.lblvalor_ctr.Name = "lblvalor_ctr";
-            this.lblvalor_ctr.Size = new System.Drawing.Size(51, 13);
+            this.lblvalor_ctr.Size = new System.Drawing.Size(34, 13);
             this.lblvalor_ctr.TabIndex = 4;
-            this.lblvalor_ctr.Text = "valor_ctr:";
+            this.lblvalor_ctr.Text = "Valor:";
             // 
             // lblid_emp
             // 
             this.lblid_emp.AutoSize = true;
             this.lblid_emp.Location = new System.Drawing.Point(6, 69);
             this.lblid_emp.Name = "lblid_emp";
-            this.lblid_emp.Size = new System.Drawing.Size(44, 13);
+            this.lblid_emp.Size = new System.Drawing.Size(57, 13);
             this.lblid_emp.TabIndex = 3;
-            this.lblid_emp.Text = "id_emp:";
+            this.lblid_emp.Text = "Empleado:";
             // 
             // lblcodigo_trs
             // 
             this.lblcodigo_trs.AutoSize = true;
             this.lblcodigo_trs.Location = new System.Drawing.Point(6, 109);
             this.lblcodigo_trs.Name = "lblcodigo_trs";
-            this.lblcodigo_trs.Size = new System.Drawing.Size(59, 13);
+            this.lblcodigo_trs.Size = new System.Drawing.Size(69, 13);
             this.lblcodigo_trs.TabIndex = 2;
-            this.lblcodigo_trs.Text = "codigo_trs:";
+            this.lblcodigo_trs.Text = "Transaccion:";
             // 
             // lblconsec_ctr
             // 

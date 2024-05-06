@@ -36,7 +36,6 @@
             this.lblEdit_Eliminar_codigo_trs = new System.Windows.Forms.Label();
             this.lblEdit_Eliminar_consec_ctr = new System.Windows.Forms.Label();
             this.lblEdit_Eliminar_codigo_loc = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.txtEdit_eliminar_estado_ctr = new System.Windows.Forms.TextBox();
             this.txtEdit_eliminar_codigo_trs = new System.Windows.Forms.TextBox();
             this.txtEdit_eliminar_valor_ctr = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             this.txtEdit_eliminar_id_emp = new System.Windows.Forms.TextBox();
             this.txtEdit_eliminar_consec_ctr = new System.Windows.Forms.TextBox();
             this.txtEdit_eliminar_codigo_loc = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.gpbEditaryeliminar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,45 +75,45 @@
             this.lblEdit_Eliminar_estado_ctr.AutoSize = true;
             this.lblEdit_Eliminar_estado_ctr.Location = new System.Drawing.Point(9, 168);
             this.lblEdit_Eliminar_estado_ctr.Name = "lblEdit_Eliminar_estado_ctr";
-            this.lblEdit_Eliminar_estado_ctr.Size = new System.Drawing.Size(57, 13);
+            this.lblEdit_Eliminar_estado_ctr.Size = new System.Drawing.Size(43, 13);
             this.lblEdit_Eliminar_estado_ctr.TabIndex = 15;
-            this.lblEdit_Eliminar_estado_ctr.Text = "estado_ctr";
+            this.lblEdit_Eliminar_estado_ctr.Text = "Estado:";
             // 
             // lblEdit_Eliminar_fecha_ctr
             // 
             this.lblEdit_Eliminar_fecha_ctr.AutoSize = true;
             this.lblEdit_Eliminar_fecha_ctr.Location = new System.Drawing.Point(234, 126);
             this.lblEdit_Eliminar_fecha_ctr.Name = "lblEdit_Eliminar_fecha_ctr";
-            this.lblEdit_Eliminar_fecha_ctr.Size = new System.Drawing.Size(52, 13);
+            this.lblEdit_Eliminar_fecha_ctr.Size = new System.Drawing.Size(40, 13);
             this.lblEdit_Eliminar_fecha_ctr.TabIndex = 14;
-            this.lblEdit_Eliminar_fecha_ctr.Text = "fecha_ctr";
+            this.lblEdit_Eliminar_fecha_ctr.Text = "Fecha:";
             // 
             // lblEdit_Eliminar_valor_ctr
             // 
             this.lblEdit_Eliminar_valor_ctr.AutoSize = true;
             this.lblEdit_Eliminar_valor_ctr.Location = new System.Drawing.Point(226, 79);
             this.lblEdit_Eliminar_valor_ctr.Name = "lblEdit_Eliminar_valor_ctr";
-            this.lblEdit_Eliminar_valor_ctr.Size = new System.Drawing.Size(48, 13);
+            this.lblEdit_Eliminar_valor_ctr.Size = new System.Drawing.Size(33, 13);
             this.lblEdit_Eliminar_valor_ctr.TabIndex = 13;
-            this.lblEdit_Eliminar_valor_ctr.Text = "valor_ctr";
+            this.lblEdit_Eliminar_valor_ctr.Text = "valor:";
             // 
             // lblEdit_Eliminar_id_emp
             // 
             this.lblEdit_Eliminar_id_emp.AutoSize = true;
             this.lblEdit_Eliminar_id_emp.Location = new System.Drawing.Point(6, 82);
             this.lblEdit_Eliminar_id_emp.Name = "lblEdit_Eliminar_id_emp";
-            this.lblEdit_Eliminar_id_emp.Size = new System.Drawing.Size(41, 13);
+            this.lblEdit_Eliminar_id_emp.Size = new System.Drawing.Size(57, 13);
             this.lblEdit_Eliminar_id_emp.TabIndex = 12;
-            this.lblEdit_Eliminar_id_emp.Text = "id_emp";
+            this.lblEdit_Eliminar_id_emp.Text = "Empleado:";
             // 
             // lblEdit_Eliminar_codigo_trs
             // 
             this.lblEdit_Eliminar_codigo_trs.AutoSize = true;
             this.lblEdit_Eliminar_codigo_trs.Location = new System.Drawing.Point(6, 123);
             this.lblEdit_Eliminar_codigo_trs.Name = "lblEdit_Eliminar_codigo_trs";
-            this.lblEdit_Eliminar_codigo_trs.Size = new System.Drawing.Size(56, 13);
+            this.lblEdit_Eliminar_codigo_trs.Size = new System.Drawing.Size(69, 13);
             this.lblEdit_Eliminar_codigo_trs.TabIndex = 11;
-            this.lblEdit_Eliminar_codigo_trs.Text = "codigo_trs";
+            this.lblEdit_Eliminar_codigo_trs.Text = "Transaccion:";
             // 
             // lblEdit_Eliminar_consec_ctr
             // 
@@ -133,16 +133,6 @@
             this.lblEdit_Eliminar_codigo_loc.TabIndex = 9;
             this.lblEdit_Eliminar_codigo_loc.Text = "Local:";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(319, 229);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 23);
-            this.btnActualizar.TabIndex = 7;
-            this.btnActualizar.Text = "actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // txtEdit_eliminar_estado_ctr
             // 
             this.txtEdit_eliminar_estado_ctr.Location = new System.Drawing.Point(72, 165);
@@ -152,7 +142,7 @@
             // 
             // txtEdit_eliminar_codigo_trs
             // 
-            this.txtEdit_eliminar_codigo_trs.Location = new System.Drawing.Point(68, 123);
+            this.txtEdit_eliminar_codigo_trs.Location = new System.Drawing.Point(81, 123);
             this.txtEdit_eliminar_codigo_trs.Name = "txtEdit_eliminar_codigo_trs";
             this.txtEdit_eliminar_codigo_trs.Size = new System.Drawing.Size(100, 20);
             this.txtEdit_eliminar_codigo_trs.TabIndex = 5;
@@ -173,9 +163,9 @@
             // 
             // txtEdit_eliminar_id_emp
             // 
-            this.txtEdit_eliminar_id_emp.Location = new System.Drawing.Point(53, 79);
+            this.txtEdit_eliminar_id_emp.Location = new System.Drawing.Point(68, 79);
             this.txtEdit_eliminar_id_emp.Name = "txtEdit_eliminar_id_emp";
-            this.txtEdit_eliminar_id_emp.Size = new System.Drawing.Size(76, 20);
+            this.txtEdit_eliminar_id_emp.Size = new System.Drawing.Size(86, 20);
             this.txtEdit_eliminar_id_emp.TabIndex = 2;
             // 
             // txtEdit_eliminar_consec_ctr
@@ -191,6 +181,21 @@
             this.txtEdit_eliminar_codigo_loc.Name = "txtEdit_eliminar_codigo_loc";
             this.txtEdit_eliminar_codigo_loc.Size = new System.Drawing.Size(57, 20);
             this.txtEdit_eliminar_codigo_loc.TabIndex = 0;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActualizar.Image = global::Importar.Properties.Resources.system_software_update_22485;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(319, 212);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 40);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "actualizar";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // Frm_editar
             // 

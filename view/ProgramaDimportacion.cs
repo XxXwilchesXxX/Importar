@@ -2,20 +2,23 @@
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
+using Importar.BLL;
 using Importar.DAL;
 using Importar.VIEW;
 
 namespace Importar
 {
-    public partial class software : Form
+    public partial class Frm_software : Form
     {
         private ConexionSqlserver_DAL conexionSqlserver; // Conexión a SQL Server
 
-        public software()
+        public Frm_software()
         {
             InitializeComponent();
             conexionSqlserver = new ConexionSqlserver_DAL(); // Inicializar conexión
             ConectarEventosDataGridView();
+            Dgv_cuadriculaDedatos.MultiSelect = true; // Permitir selección múltiple
+            Dgv_cuadriculaDedatos.KeyDown += Dgv_cuadriculaDedatos_KeyDown;
         }
 
         private void ConectarEventosDataGridView()
@@ -38,20 +41,22 @@ namespace Importar
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            importador_VIEW importador = new importador_VIEW();
-            DataTable dt = importador.ImportarCsv(out int numFilas);
+            try
+            {
+                Importar_BLL importarBLL = new Importar_BLL();
+                DataTable dt = importarBLL.ImportarDatos();
 
-            if (dt != null)
-            {
                 Dgv_cuadriculaDedatos.DataSource = dt;
-                ActualizarConteoFilas();
-                importador_VIEW.ConfigurarDataGridView(Dgv_cuadriculaDedatos, lblFilasImportadas);
+
+                importarBLL.ConfigurarDataGridView(Dgv_cuadriculaDedatos, lblFilasImportadas);
+                importarBLL.ActualizarConteoFilas(Dgv_cuadriculaDedatos, lblFilasImportadas);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se importaron datos.");
+                MessageBox.Show($"Error al importar datos: {ex.Message}");
             }
         }
+
 
         private void btnSubirDB_Click(object sender, EventArgs e)
         {
@@ -64,10 +69,10 @@ namespace Importar
 
                 worker.DoWork += (s, ev) =>
                 {
-                    SubirDatosDB_DAL subirDatosDB = new SubirDatosDB_DAL();
+                    SubirDatosDB subirDatosDB = new SubirDatosDB();
                     subirDatosDB.SubirDatos(Dgv_cuadriculaDedatos, numDatos, percent =>
                     {
-                        worker.ReportProgress(percent);
+                        worker.ReportProgress((int)percent);
                     });
                 };
 
@@ -93,24 +98,29 @@ namespace Importar
             }
         }
 
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Dgv_cuadriculaDedatos.SelectedRows.Count == 0)
+            try
             {
-                MessageBox.Show("Seleccione una fila para eliminar.");
-                return;
+                eliminarFila_BLL eliminador = new eliminarFila_BLL();
+                eliminador.EliminarFilas(Dgv_cuadriculaDedatos, lblFilasImportadas);
             }
-
-            var selectedRow = Dgv_cuadriculaDedatos.SelectedRows[0];
-            var result = MessageBox.Show("¿Está seguro de que desea eliminar esta fila?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            catch (Exception ex)
             {
-                Dgv_cuadriculaDedatos.Rows.Remove(selectedRow);
-                ActualizarConteoFilas();
-                MessageBox.Show("Fila eliminada con éxito.");
+                MessageBox.Show($"Error al eliminar la fila: {ex.Message}");
             }
         }
+
+        private void Dgv_cuadriculaDedatos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Capturar tecla "Supr" para eliminar
+            {
+                var eliminarBLL = new eliminarFila_BLL();
+                eliminarBLL.EliminarFilas(Dgv_cuadriculaDedatos, lblFilasImportadas);
+            }
+        }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -133,5 +143,6 @@ namespace Importar
                 ActualizarConteoFilas();
             }
         }
+
     }
 }
