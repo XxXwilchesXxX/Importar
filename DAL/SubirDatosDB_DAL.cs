@@ -31,6 +31,27 @@ namespace Importar.DAL
             }
         }
 
+        public int ObtenerConteoTotal()
+        {
+            int totalDatos = 0;
+
+            AbrirConexion(); // Asegurarse de abrir la conexión
+            try
+            {
+                var query = "SELECT COUNT(*) FROM MiTabla"; // Ajustar según el nombre de la tabla
+                using (var command = new SqlCommand(query, connection))
+                {
+                    totalDatos = Convert.ToInt32(command.ExecuteScalar()); // Obtener el número total de registros
+                }
+            }
+            finally
+            {
+                CerrarConexion(); // Siempre cerrar la conexión
+            }
+
+            return totalDatos; // Devolver el conteo total
+        }
+
         public void AgregarDato(DataRow row)
         {
             try
@@ -135,4 +156,3 @@ namespace Importar.DAL
 
     }
 }
-

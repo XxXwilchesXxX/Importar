@@ -61,7 +61,7 @@ namespace Importar
 
             dgv.ReadOnly = true;
             dgv.AllowUserToAddRows = false;
-            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToDeleteRows = false;  
             dgv.AllowUserToOrderColumns = true;
 
             dgv.RowsAdded += (sender, e) => ActualizarLabel(dgv, lblFilasImportadas);
