@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbAgrupacion = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.lblDatos_guardados = new System.Windows.Forms.Label();
             this.gpbAgrupacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_cuadriculaDedatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -54,6 +55,7 @@
             // gpbAgrupacion
             // 
             this.gpbAgrupacion.BackColor = System.Drawing.SystemColors.Info;
+            this.gpbAgrupacion.Controls.Add(this.lblDatos_guardados);
             this.gpbAgrupacion.Controls.Add(this.btnEditar);
             this.gpbAgrupacion.Controls.Add(this.btnEliminar);
             this.gpbAgrupacion.Controls.Add(this.btnDatonuevo);
@@ -186,15 +188,24 @@
             this.Dgv_cuadriculaDedatos.Name = "Dgv_cuadriculaDedatos";
             this.Dgv_cuadriculaDedatos.ReadOnly = true;
             this.Dgv_cuadriculaDedatos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.Dgv_cuadriculaDedatos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_cuadriculaDedatos.Size = new System.Drawing.Size(723, 331);
             this.Dgv_cuadriculaDedatos.TabIndex = 1;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // lblDatos_guardados
+            // 
+            this.lblDatos_guardados.AutoSize = true;
+            this.lblDatos_guardados.Location = new System.Drawing.Point(185, 440);
+            this.lblDatos_guardados.Name = "lblDatos_guardados";
+            this.lblDatos_guardados.Size = new System.Drawing.Size(92, 13);
+            this.lblDatos_guardados.TabIndex = 12;
+            this.lblDatos_guardados.Text = "Esperando Contar";
             // 
             // Frm_software
             // 
@@ -231,6 +242,7 @@
         private System.Windows.Forms.Button btnDatonuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Label lblDatos_guardados;
     }
 }
 
