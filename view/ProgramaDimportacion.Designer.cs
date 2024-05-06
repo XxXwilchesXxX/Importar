@@ -1,6 +1,6 @@
 ﻿namespace Importar
 {
-    partial class software
+    partial class Frm_software
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -72,32 +72,47 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(522, 435);
+            this.btnEditar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditar.Image = global::Importar.Properties.Resources.edit_document_file_icon_123491;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(561, 421);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(109, 23);
+            this.btnEditar.Size = new System.Drawing.Size(84, 42);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(416, 435);
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Image = global::Importar.Properties.Resources.iconfinder_trash_4341321_120557;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(467, 421);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(88, 42);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnDatonuevo
             // 
-            this.btnDatonuevo.Location = new System.Drawing.Point(637, 435);
+            this.btnDatonuevo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDatonuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDatonuevo.Image = global::Importar.Properties.Resources._1486485557_add_create_new_more_plus_81188;
+            this.btnDatonuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDatonuevo.Location = new System.Drawing.Point(651, 421);
             this.btnDatonuevo.Name = "btnDatonuevo";
-            this.btnDatonuevo.Size = new System.Drawing.Size(124, 23);
+            this.btnDatonuevo.Size = new System.Drawing.Size(93, 42);
             this.btnDatonuevo.TabIndex = 8;
-            this.btnDatonuevo.Text = "Agregar un nuevo dato ";
-            this.btnDatonuevo.UseVisualStyleBackColor = true;
+            this.btnDatonuevo.Text = "Agregar ";
+            this.btnDatonuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDatonuevo.UseVisualStyleBackColor = false;
             this.btnDatonuevo.Click += new System.EventHandler(this.btnDatonuevo_Click);
             // 
             // lblFilasImportadas
@@ -112,7 +127,7 @@
             // lblProcessing
             // 
             this.lblProcessing.AutoSize = true;
-            this.lblProcessing.Location = new System.Drawing.Point(362, 23);
+            this.lblProcessing.Location = new System.Drawing.Point(384, 32);
             this.lblProcessing.Name = "lblProcessing";
             this.lblProcessing.Size = new System.Drawing.Size(91, 13);
             this.lblProcessing.TabIndex = 7;
@@ -120,39 +135,46 @@
             // 
             // prgbProcessing
             // 
-            this.prgbProcessing.Location = new System.Drawing.Point(171, 18);
+            this.prgbProcessing.Location = new System.Drawing.Point(188, 26);
             this.prgbProcessing.Name = "prgbProcessing";
             this.prgbProcessing.Size = new System.Drawing.Size(173, 23);
             this.prgbProcessing.TabIndex = 6;
             // 
             // txtNumeroDatos
             // 
-            this.txtNumeroDatos.Location = new System.Drawing.Point(500, 21);
+            this.txtNumeroDatos.Location = new System.Drawing.Point(481, 29);
             this.txtNumeroDatos.Name = "txtNumeroDatos";
             this.txtNumeroDatos.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroDatos.TabIndex = 5;
             // 
             // btnSubirDB
             // 
-            this.btnSubirDB.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSubirDB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSubirDB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubirDB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSubirDB.Location = new System.Drawing.Point(615, 18);
+            this.btnSubirDB.Image = global::Importar.Properties.Resources.save_783481;
+            this.btnSubirDB.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnSubirDB.Location = new System.Drawing.Point(640, 18);
             this.btnSubirDB.Name = "btnSubirDB";
-            this.btnSubirDB.Size = new System.Drawing.Size(146, 23);
+            this.btnSubirDB.Size = new System.Drawing.Size(104, 40);
             this.btnSubirDB.TabIndex = 4;
-            this.btnSubirDB.Text = "Subir a la base de datos";
+            this.btnSubirDB.Text = "Guardar";
+            this.btnSubirDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubirDB.UseVisualStyleBackColor = false;
             this.btnSubirDB.Click += new System.EventHandler(this.btnSubirDB_Click);
             // 
             // btnImportar
             // 
-            this.btnImportar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnImportar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImportar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImportar.Location = new System.Drawing.Point(6, 19);
+            this.btnImportar.Image = global::Importar.Properties.Resources.ext_csv_filetype_icon_176252;
+            this.btnImportar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnImportar.Location = new System.Drawing.Point(21, 18);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(146, 23);
+            this.btnImportar.Size = new System.Drawing.Size(146, 40);
             this.btnImportar.TabIndex = 2;
-            this.btnImportar.Text = "Importar archivo CSV";
+            this.btnImportar.Text = "Importar";
             this.btnImportar.UseVisualStyleBackColor = false;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
@@ -173,14 +195,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // software
+            // Frm_software
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(788, 490);
             this.Controls.Add(this.gpbAgrupacion);
-            this.Name = "software";
+            this.Name = "Frm_software";
             this.Text = "Programa de insertar archivo CSV";
             this.gpbAgrupacion.ResumeLayout(false);
             this.gpbAgrupacion.PerformLayout();
