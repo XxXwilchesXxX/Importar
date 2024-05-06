@@ -17,8 +17,12 @@ namespace Importar
             InitializeComponent();
             conexionSqlserver = new ConexionSqlserver_DAL(); // Inicializar conexión
             ConectarEventosDataGridView();
+
+            // Configurar DataGridView para seleccionar toda la fila con un clic
+            Dgv_cuadriculaDedatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Dgv_cuadriculaDedatos.MultiSelect = true; // Permitir selección múltiple
             Dgv_cuadriculaDedatos.KeyDown += Dgv_cuadriculaDedatos_KeyDown;
+
         }
 
         private void ConectarEventosDataGridView()
@@ -26,6 +30,7 @@ namespace Importar
             // Conectar eventos para mantener el conteo de filas actualizado
             Dgv_cuadriculaDedatos.RowsAdded += Dgv_cuadriculaDedatos_RowsChanged;
             Dgv_cuadriculaDedatos.RowsRemoved += Dgv_cuadriculaDedatos_RowsChanged;
+
         }
 
         private void Dgv_cuadriculaDedatos_RowsChanged(object sender, EventArgs e)
@@ -56,6 +61,9 @@ namespace Importar
                 MessageBox.Show($"Error al importar datos: {ex.Message}");
             }
         }
+
+
+
 
 
         private void btnSubirDB_Click(object sender, EventArgs e)
@@ -99,6 +107,9 @@ namespace Importar
         }
 
 
+
+
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -121,6 +132,10 @@ namespace Importar
             }
         }
 
+     
+
+
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -134,6 +149,10 @@ namespace Importar
                 MessageBox.Show("Seleccione una fila para editar.");
             }
         }
+
+
+
+
 
         private void btnDatonuevo_Click(object sender, EventArgs e)
         {

@@ -184,6 +184,7 @@
             this.Dgv_cuadriculaDedatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_cuadriculaDedatos.Location = new System.Drawing.Point(21, 79);
             this.Dgv_cuadriculaDedatos.Name = "Dgv_cuadriculaDedatos";
+            this.Dgv_cuadriculaDedatos.ReadOnly = true;
             this.Dgv_cuadriculaDedatos.RowHeadersVisible = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen;
